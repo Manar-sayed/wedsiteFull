@@ -1,0 +1,665 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<app-nav-bar></app-nav-bar>
+<!-- <div id="content-wrapper"[dir]="translatedDirAttribute"> -->
+<div id="content-wrapper">
+  <!--================ Slider Top Section =================-->
+  <div class="slider-top hmslider1 hmslider2">
+    <div class="tt-mslide-wrapper">
+      <div class="swiper-container" data-loop="1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="tt-mslide one">
+              <div class="tt-mslide-entry slide1">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="slider_content">
+                        <h4
+                          class="mb-3 text-animation"
+                          data-animation="fadeInDown"
+                        >
+                          <!-- {{ "weput" | translate }} -->
+                          {{ "weput" | translation : language }}
+                        </h4>
+                        <div
+                          class="tt-mslide-title white text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <h3>
+                            {{ "Dreams" | translation : language }}
+                            <span class="my-5">Into </span>
+                            {{ "Reality" | translation : language }}
+                          </h3>
+                          <p>
+                            {{ "swipperslide1" | translation : language }}
+                          </p>
+                        </div>
+                        <div
+                          class="wrapper-inner-tab-backgrounds-first text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <a href="#">
+                            <div class="sim-button button8 whitebtn">
+                              <span>{{
+                                "swipperbtn" | translation : language
+                              }}</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tt-mslide two">
+              <div class="tt-mslide-entry slide2">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="slider_content">
+                        <h4
+                          class="mb-4 text-animation"
+                          data-animation="fadeInDown"
+                        >
+                          {{ "weput" | translation : language }}
+                        </h4>
+                        <div
+                          class="tt-mslide-title white text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <h3>
+                            {{ "Dreams" | translation : language }}
+                            <span class="my-3">Into </span>
+                            {{ "Reality" | translation : language }}
+                          </h3>
+                          <p>
+                            {{ "swipperslide1" | translation : language }}
+                          </p>
+                        </div>
+                        <div
+                          class="wrapper-inner-tab-backgrounds-first text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <a href="#">
+                            <div class="sim-button button8 whitebtn">
+                              <span>{{
+                                "swipperbtn" | translation : language
+                              }}</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tt-mslide three">
+              <div class="tt-mslide-entry slide3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="slider_content">
+                        <h4
+                          class="mb-4 text-animation"
+                          data-animation="fadeInDown"
+                        >
+                          {{ "weput" | translation : language }}
+                        </h4>
+                        <div
+                          class="tt-mslide-title white text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <h3>
+                            {{ "Dreams" | translation : language }}
+                            <span class="my-3">Into </span>
+                            {{ "Reality" | translation : language }}
+                          </h3>
+                          <p>
+                            {{ "swipperslide1" | translation : language }}
+                          </p>
+                        </div>
+                        <div
+                          class="wrapper-inner-tab-backgrounds-first text-animation"
+                          data-animation="fadeInUp"
+                        >
+                          <a href="#">
+                            <div class="sim-button button8 whitebtn">
+                              <span>{{
+                                "swipperbtn" | translation : language
+                              }}</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- navigation buttons -->
+        <div class="swiper-button-next">
+          <i class="icofont icofont-rounded-right"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="icofont icofont-rounded-left"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================ End Slider Top Section =================-->
+
+  <!--================ Welcome Section =================-->
+  <div class="welcome_section" [dir]="textDir">
+    <div class="container">
+      <div class="row align-items-center my-5 py-5">
+        <div class="col-md-6">
+          <div class="">
+            <h4>{{ "welcome_section_main_title" | translation : language }}</h4>
+            <h2>
+              {{ "welcome_section_sub_title" | translation : language }}
+              <span class="mt-5 pt-5"
+                >{{ "welcome_section_date_title" | translation : language }}
+              </span>
+            </h2>
+            <div class="simple-text">
+              <p>
+                {{ "welcome_section_desc1" | translation : language }}
+              </p>
+              <p>
+                {{ "welcome_section_desc2" | translation : language }}
+              </p>
+            </div>
+            <div class="buttons mb-5">
+              <div class="sim-button button8">
+                <a href="about"
+                  ><span>{{
+                    "welcome_section_AboutUs" | translation : language
+                  }}</span></a
+                >
+              </div>
+              <div class="sim-button nextbtn button8">
+                <a href="projects"
+                  ><span>{{
+                    "welcome_section_Projects" | translation : language
+                  }}</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="image">
+            <img
+              src="assets/images/home2/w_right.png"
+              class="img-responsive"
+              alt="Image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================ End Welcome Section =================-->
+
+  <!-- <app-services></app-services> -->
+  <!--================ Services Section =================-->
+  <div class="services_01">
+    <div class="container">
+      <div class="row">
+        <div class="tt-title">
+          {{ "services_mainTitle" | translation : language }}
+        </div>
+        <div class="simple-text">
+          <p>
+            {{ "services_mainDesc" | translation : language }}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          <div class="item">
+            <div class="single_service">
+              <div class="image image-opacity-on-hover image-zoom-on-hover">
+                <img
+                  src="assets/images/home1/service1.jpg"
+                  alt="Service1"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="content">
+                <h4 class="sub-title">
+                  {{ "services_serv1_title" | translation : language }}
+                </h4>
+                <div class="simple-text">
+                  <p>
+                    {{ "services_serv1_desc" | translation : language }}
+                  </p>
+                </div>
+                <div class="wrapper-inner-tab-backgrounds-first">
+                  <div class="sim-button button8">
+                    <a href="#"
+                      ><span
+                        >{{ "services_moreBtn" | translation : language }}
+                        <i class="icofont icofont-rounded-right"></i></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="single_service">
+              <div class="image image-opacity-on-hover image-zoom-on-hover">
+                <img
+                  src="assets/images/home1/service2.jpg"
+                  alt="Service1"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="content">
+                <h4 class="sub-title">
+                  {{ "services_serv2_title" | translation : language }}
+                </h4>
+                <div class="simple-text">
+                  <p>
+                    {{ "services_serv2_desc" | translation : language }}
+                  </p>
+                </div>
+                <div class="wrapper-inner-tab-backgrounds-first">
+                  <div class="sim-button button8">
+                    <a href="#"
+                      ><span
+                        >{{ "services_moreBtn" | translation : language }}
+                        <i class="icofont icofont-rounded-right"></i></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="single_service">
+              <div class="image image-opacity-on-hover image-zoom-on-hover">
+                <img
+                  src="assets/images/home1/service3.jpg"
+                  alt="Service1"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="content">
+                <h4 class="sub-title">
+                  {{ "services_serv3_title" | translation : language }}
+                </h4>
+                <div class="simple-text">
+                  <p>
+                    {{ "services_serv3_desc" | translation : language }}
+                  </p>
+                </div>
+                <div class="wrapper-inner-tab-backgrounds-first">
+                  <div class="sim-button button8">
+                    <a href="#"
+                      ><span
+                        >{{ "services_moreBtn" | translation : language }}
+                        <i class="icofont icofont-rounded-right"></i></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--================ End Services Section =================-->
+  <!-- about us -->
+  <div class="about_us_01" [dir]="textDir">
+    <div class="container">
+      <div class="row">
+        <div class="tt-title text-center">
+          {{ "about_us_mainTitle" | translation : language }}
+        </div>
+        <div class="simple-text">
+          <p>
+            {{ "about_us_mainDesc" | translation : language }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about_us_features about_us_features_02" [dir]="textDir">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center mx-3 gap-md-3">
+        <div class="col about_us1 pt-5">
+          <h2>01</h2>
+          <div class="content" [dir]="textDir">
+            <i class="icofont icofont-energy-savings"></i>
+            <h3>{{ "about_us_card1_title" | translation : language }}</h3>
+            <p>
+              {{ "about_us_card1_desc" | translation : language }}
+            </p>
+          </div>
+        </div>
+        <div class="col about_us1 pt-5">
+          <h2>02</h2>
+          <div class="content">
+            <i class="icofont icofont-calculations"></i>
+            <h3>{{ "about_us_card2_title" | translation : language }}</h3>
+            <p>
+              {{ "about_us_card2_desc" | translation : language }}
+            </p>
+          </div>
+        </div>
+        <div class="col about_us1 pt-5">
+          <h2>03</h2>
+          <div class="content">
+            <i class="icofont icofont-labour"></i>
+            <h3>{{ "about_us_card3_title" | translation : language }}</h3>
+            <p>
+              {{ "about_us_card3_desc" | translation : language }}
+            </p>
+          </div>
+        </div>
+        <div class="col about_us1 pt-5">
+          <h2>04</h2>
+          <div class="content">
+            <i class="icofont icofont-ui-home"></i>
+            <h3>{{ "about_us_card4_title" | translation : language }}</h3>
+            <p>
+              {{ "about_us_card4_desc" | translation : language }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+      <div class="d-flex gap">
+        <div class="col col-md-6 col-lg-3 about_us1 pt-5">
+          <h2>01</h2>
+          <div class="content">
+            <i class="icofont icofont-energy-savings"></i>
+            <h3>Innovative Approach</h3>
+            <p>
+              Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+              sollicitudin vulputate lacus, congue vulputate nisl eleifend in.
+            </p>
+          </div>
+        </div>
+        <div class="col col-md-6 col-lg-3 about_us1 pt-5">
+          <h2>02</h2>
+          <div class="content">
+            <i class="icofont icofont-calculations"></i>
+            <h3>Perfectly Structured</h3>
+            <p>
+              Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+              sollicitudin vulputate lacus, congue vulputate nisl eleifend in.
+            </p>
+          </div>
+        </div>
+        <div class="col col-md-6 col-lg-3 about_us1 pt-5">
+          <h2>03</h2>
+          <div class="content">
+            <i class="icofont icofont-labour"></i>
+            <h3>Affordable Team</h3>
+            <p>
+              Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+              sollicitudin vulputate lacus, congue vulputate nisl eleifend in.
+            </p>
+          </div>
+        </div>
+        <div class="col col-md-6 col-lg-3 about_us1 pt-5">
+          <h2>04</h2>
+          <div class="content">
+            <i class="icofont icofont-ui-home"></i>
+            <h3>Delivered On Time</h3>
+            <p>
+              Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+              sollicitudin vulputate lacus, congue vulputate nisl eleifend in.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <!--================  Our Latest Works Section =================-->
+
+  <div
+    class="portfolio latest_work_01 project_3columns cellpadding"
+    [dir]="textDir"
+  >
+    <div class="container">
+      <div class="row row0">
+        <div class="tt-title text-center">
+          {{ "portfolio_mainTitle" | translation : language }}
+        </div>
+        <div class="simple-text">
+          <p>
+            {{ "portfolio_mainDesc" | translation : language }}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="portfolio-sorting list-inline text-center">
+          <li>
+            <a href="#" data-group="all" class="active">{{
+              "portfolio_All_btn" | translation : language
+            }}</a>
+          </li>
+          <li>
+            <a href="#" data-group="residential">{{
+              "portfolio_Residential_btn" | translation : language
+            }}</a>
+          </li>
+          <li>
+            <a href="#" data-group="interiors">{{
+              "portfolio_Interiors_btn" | translation : language
+            }}</a>
+          </li>
+          <li>
+            <a href="#" data-group="architecture">{{
+              "portfolio_Architecture_btn" | translation : language
+            }}</a>
+          </li>
+          <li>
+            <a href="#" data-group=" ">{{
+              "portfolio_Commerical_btn" | translation : language
+            }}</a>
+          </li>
+        </ul>
+        <!--end portfolio sorting -->
+        <div class="portfolio-items list-unstyled mt-5">
+          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["residential"]'>
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img11.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Residential</h5>
+                  <a
+                    href="assets/images/project/img11.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["interiors"]'>
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img12.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Kitchen Interiors</h5>
+                  <a
+                    href="assets/images/project/img12.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+
+          <div
+            class="col-md-4 col-sm-6 col-xs-6"
+            data-groups='["architecture"]'
+          >
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img14.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Modern Architecture</h5>
+                  <a
+                    href="assets/images/project/img14.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+
+          <div
+            class="col-md-4 col-sm-6 col-xs-6"
+            data-groups='["architecture"]'
+          >
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img15.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Row Houses</h5>
+                  <a
+                    href="assets/images/project/img15.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["interiors"]'>
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img16.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Living Room Interior</h5>
+                  <a
+                    href="assets/images/project/img16.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["commerical"]'>
+            <figure class="portfolio-item item">
+              <a href="#">
+                <img
+                  src="assets/images/project/img17.jpg"
+                  alt="Item 1"
+                  class="img-responsive"
+                />
+              </a>
+              <div class="overlay">
+                <div class="inner">
+                  <h5>Construction Services</h5>
+                  <a
+                    href="assets/images/project/img17.jpg"
+                    class="zoom popupzoom"
+                    ><i class="icofont icofont-search"></i
+                  ></a>
+                  <a href="#" class="link"
+                    ><i class="icofont icofont-link"></i
+                  ></a>
+                </div>
+                <!-- end .inner -->
+              </div>
+            </figure>
+          </div>
+          <!-- sizer -->
+          <!-- <div class="col-md-4 col-sm-6 col-xs-6 shuffle_sizer"></div> -->
+          <!--end portfolio grid -->
+        </div>
+        <!--end row -->
+      </div>
+    </div>
+  </div>
+
+  <!--================ End  Our Latest Works Section =================-->
+</div>
+
+<app-footer></app-footer>

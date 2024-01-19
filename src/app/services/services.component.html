@@ -1,0 +1,213 @@
+<app-nav-bar></app-nav-bar>
+<div id="content-wrapper">
+  <!--================ Banner Area =================-->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <h3 class="tt-title">Our Services</h3>
+      </div>
+    </div>
+  </div>
+  <!--================ End Banner Area =================-->
+  <!--================ Breadcrumb =================-->
+  <div class="container">
+    <div class="row">
+      <div class="breadcrumb d-flex justify-content-center">
+        <ul>
+          <li><a href="home">Home</a></li>
+          <li><i class="icofont icofont-double-right"></i></li>
+          <li><a href="services">Our Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--================ End Breadcrumb =================-->
+  <!--================ Services Section =================-->
+  <div class="services_01 service_page_01">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6" *ngFor="let pro of products">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/service1.jpg"
+                alt="Service6"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">{{ pro.name }}</h4>
+              <div class="simple-text">
+                <p>
+                  {{ pro.describtion }}
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a [routerLink]="['/detalis/', pro.id]"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/service2.jpg"
+                alt="Service1"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">Architecture</h4>
+              <div class="simple-text">
+                <p>
+                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
+                  in.
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a href="#"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/service3.jpg"
+                alt="Service2"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">House Renovation</h4>
+              <div class="simple-text">
+                <p>
+                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
+                  in.
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a href="#"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/img1.jpg"
+                alt="Service3"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">Interior Designing</h4>
+              <div class="simple-text">
+                <p>
+                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
+                  in.
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a href="#"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/img2.jpg"
+                alt="Service4"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">Commercial Building</h4>
+              <div class="simple-text">
+                <p>
+                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
+                  in.
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a href="#"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="assets/images/services/img3.jpg"
+                alt="Service5"
+                class="img-responsive"
+              />
+            </div>
+            <div class="content">
+              <h4 class="sub-title">Roofing</h4>
+              <div class="simple-text">
+                <p>
+                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
+                  in.
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a href="#"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!--================ End Services Section =================-->
+
+  <!-- <app-footer></app-footer> -->
+</div>

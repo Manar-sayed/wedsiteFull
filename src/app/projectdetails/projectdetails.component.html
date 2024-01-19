@@ -1,0 +1,196 @@
+<app-nav-bar></app-nav-bar>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<div id="content-wrapper">
+  <!--================ Banner Area =================-->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <h3 class="tt-title">Project Details</h3>
+      </div>
+    </div>
+  </div>
+  <!--================ End Banner Area =================-->
+  <!--================ Breadcrumb =================-->
+  <div class="container">
+    <div class="row">
+      <div class="breadcrumb d-flex justify-content-center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><i class="icofont icofont-double-right"></i></li>
+          <li><a href="project_2col.html">Our Projects</a></li>
+          <li><i class="icofont icofont-double-right"></i></li>
+          <li class="active">
+            <a href="project_details.html">Project Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--================ End Breadcrumb =================-->
+  <!--================ Project Details Section =================-->
+  <div class="project_details cellpadding">
+    <div class="d-flex related_projects bg-transparent">
+      <div
+        class="owl-carousel owl-carousel6 owl-theme owl-loaded owl-drag col-md-8"
+      >
+        <div class="bg-info">
+          <div
+            class=""
+            style="
+              transform: translate3d(-19px, 0px, 0px);
+              transition: all 1.5s ease 0s;
+              width: 343px;
+            "
+          ></div>
+        </div>
+        <div class="">
+          <div class="d-flex justify-content-around">
+            <div *ngFor="let photo of currentProduct.photos">
+              <div>
+                <div class="swap">
+                  <img
+                    [src]="fullUrl"
+                    alt="Product Image"
+                    (error)="setDefaultImage()"
+                    class="img-responsive"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="owl-dots">
+          <div class="owl-dot active"><span></span></div>
+          <div class="owl-dot"><span></span></div>
+        </div>
+      </div>
+
+      <!-- <img [src]="imageUrl" alt="My Image"> -->
+      <div class="col-md-4">
+        <div class="content">
+          <h4 class="sub-title">Project Description</h4>
+          <div class="simple-text">
+            <p>
+              {{ currentProduct.describtion }}
+            </p>
+          </div>
+          <!-- <ul>
+              <li><span>Client:</span> Construction Company</li>
+              <li><span>Location:</span>London Donec eleifend 96502</li>
+              <li><span>Surface Area:</span>500,000 m2</li>
+              <li><span>Year Completed:</span>2017</li>
+              <li><span>Value:</span>$550.000</li>
+              <li><span>Architect:</span>Harri &amp; Gary</li>
+            </ul> -->
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row row0">
+        <div class="col-md-8">
+          <h4 class="sub-title">Single Row House Bungalow</h4>
+          <div class="simple-text">
+            <p>
+              Vivamus ac ultrices diam, vitae accumsan tellus. Integer
+              sollicitudin vulputate lacus, congue vulputate nisl eleifend in.
+              Lorem ipsum dolor sit amet, blandit adipisicing ultricies sed
+              molestias ligula id, omnis pellentesque, mauris vivamus faucibus
+              nulla iaculis erat risus, suspendisse non aliquam mauris risus
+              dui. Et dolor posuere, metus wisi.
+            </p>
+            <p>
+              Nunc tristique tellus quam, id ultrices urna rhoncus non. Cras
+              rhoncus interdum arcu eget congue. Curabitur non justo velit.
+              Proin vitae elit condimentum, tincidunt dui id, egestas orci.
+              Curabitur feugiat enim ullamcorper faucibus sodales. Lorem ipsum
+              dolor sit amet, consectetur adipiscing elit. Aliquam feugiat
+              sodales mauris. Proin quis elit vel ligula rutrum bibendum. Aenean
+              et orci hendrerit, consectetur nulla eu, viverra magna. In et
+              ipsum.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text">
+            <h4 class="sub-title">Project Details</h4>
+            <h5>Design &amp; Development</h5>
+            <h5>Professional Team Members</h5>
+            <h5>We Love To Support</h5>
+          </div>
+          <div class="simple-text">
+            <p>
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              lorem quis.
+            </p>
+          </div>
+        </div>
+      </div> -->
+  </div>
+  <!--================ End Project Details Section =================-->
+  <!--================ Related Projects Section =================-->
+  <div class="related_projects cellpadding">
+    <div class="container">
+      <div class="row">
+        <div class="tt-title text-center">Related Projects</div>
+        <div class="simple-text">
+          <p>
+            Sometimes you want to go where everybody knows your name. And
+            they're always glad you came. Straight nin' the curveslatnin' the
+            hills Someday the mountain will.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="latest_work_01">
+      <div class="owl-carousel owl-carousel6 owl-theme owl-loaded owl-drag">
+        <div class="">
+          <div
+            style="
+              transform: translate3d(-1819px, 0px, 0px);
+              transition: all 1.5s ease 0s;
+              width: 3943px;
+            "
+          ></div>
+        </div>
+        <div class="">
+          <div class="d-flex justify-content-around">
+            <div *ngFor="let item of allRelatedWork">
+              <div class="relatedDiv">
+                <div class="swap">
+                  <img
+                    src="../../assets/images/home2/slide1.jpg"
+                    alt=""
+                    class="w-100 h-100 rounded"
+                  />
+                </div>
+
+                <h2 class="d-flex justify-content-center">
+                  {{ currentProduct.name }}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="owl-dots">
+          <div class="owl-dot active"><span></span></div>
+          <div class="owl-dot"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================ End Related Projects Section =================-->
+</div>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-oM/0Rftvi60ZR8sK7P5Oqk6+JgViK9lExoknI5cCN9N5kKlmykDLgK9dRm2D4/GPe0Foq0uj17Vv90Mz6j5+g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>

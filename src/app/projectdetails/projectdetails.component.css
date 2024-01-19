@@ -1,0 +1,76 @@
+@import url(../../assets/styleMain.css);
+ .owl-carousel .owl-nav .owl-next,
+ .owl-carousel .owl-nav .owl-prev {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #fff;
+  color: #f2c21a;
+}
+ .owl-carousel .owl-nav .owl-next:hover,
+ .owl-carousel .owl-nav .owl-prev:hover {
+  background: #f2c21a;
+  color: #fff;
+}
+
+.scroll-row-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  max-width: 100%; /* Set a max-width if needed */
+}
+.productImg{
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+}
+
+.scroll-row {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.scroll-item {
+  flex-shrink: 0;
+  margin-right: 10px; /* Adjust margin as needed */
+  min-width: 300px; /* Set a min-width for each card */
+}
+
+mat-card {
+  width: 900px;
+  height: 100px;
+  margin: 10px;
+}
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+.img-responsive {
+  width: 6000px;
+  height: 200px;
+  /* object-fit: cover; */
+}
+
+.owl-carousel .owl-item {
+  margin: 0;
+  padding: 0;
+}
+
+.owl-carousel .owl-stage {
+  padding: 0;
+}
+.swap {
+  width: 37em;
+  height: 20em;
+
+  border-radius: 20px;
+}
+.relatedDiv {
+  /* background-color: var(--main-bg-color); */
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+h2 {
+  color: var(--main-font-color);
+  padding: 3px;
+}

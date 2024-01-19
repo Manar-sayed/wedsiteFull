@@ -1,0 +1,40 @@
+element.style {
+  will-change: transform;
+  /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); */
+  /* transform-style: preserve-3d; */
+}
+.langbtn {
+  background-color: var(--main-two);
+  border-radius: 5px;
+  margin-left: 5px;
+  padding: 7px;
+  color: white;
+  font-size: 1.5rem;
+  border: 1px solid transparent;
+}
+
+/* Add this CSS to your styles.css or styles.scss file */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+@import url(../../assets/styleMain.css);
+
+button {
+  padding: 3px 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button.english {
+  background-color: orange;
+  color: white;
+}
+
+button.arabic {
+  background-color: var(--main-light-two);
+  color: white;
+}

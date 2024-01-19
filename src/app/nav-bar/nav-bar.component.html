@@ -1,0 +1,136 @@
+<header class="header2" [dir]="textDir">
+  <div class="header_top_02">
+    <div class="mx-5">
+      <div class="row">
+        <div class="col-md-8 col-sm-9">
+          <ul>
+            <li>
+              <i class="icofont icofont-social-google-map"></i>287 Vermont Road
+              Niceville 1500, Australia
+            </li>
+            <li>
+              <a href="mailto:info@parcons.com"
+                ><i class="icofont icofont-envelope"></i> info@parcons.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-sm-3">
+          <p>Toll Free<span>+1 (123) 456 - 7890</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tt-header bg-transparent-sm" [dir]="textDir">
+    <div class="container bg-transparent-sm">
+      <div class="top-inner clearfix">
+        <div class="logo pull-left main-logo">
+          <a href="index.html"
+            ><img src="../../assets/images/" class="img-responsive" alt=""
+          /></a>
+        </div>
+
+        <div class="cmn-toggle-switch"><span></span></div>
+      </div>
+      <div class="toggle-block nav">
+        <div class="toggle-block-container">
+          <nav class="main-nav clearfix">
+            <ul class="">
+              <li class="active parent">
+                <a href="home"
+                  ><span>
+                    {{ "navbar.home" | translation : language }}
+                  </span></a
+                >
+              </li>
+              <li class="parent">
+                <a href="about"
+                  ><span>
+                    {{ "navbar.about" | translation : language }}
+                  </span></a
+                >
+              </li>
+
+              <li class="parent">
+                <a
+                  ><span>
+                    {{ "navbar.services" | translation : language }}
+                    <i class="menu-toggle fa fa-angle-down"></i></span
+                ></a>
+                <!-- <ul class="-mt-5" id="bginfo" *ngFor="let cat of categories">
+                  <li class="parent">
+                    <a href="services_02.html"><span> Service Two</span></a>
+                  </li>
+                </ul> -->
+                <ul>
+                  <li *ngFor="let cat of categories" class="parent">
+                    <a [routerLink]="['/services/', cat.id]"
+                      ><span> {{ cat.name }}</span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="parent">
+                <a href="projects"
+                  ><span>
+                    {{ "navbar.Products" | translation : language }}
+
+                    <!-- <i class="menu-toggle fa fa-angle-down"></i> -->
+                  </span></a
+                >
+                <!-- <ul>
+                  <li>
+                    <a href="project_details.html"
+                      ><span>Project Details</span></a
+                    >
+                  </li>
+                </ul> -->
+              </li>
+              <li class="last">
+                <a href="contact"
+                  ><span>
+                    {{ "navbar.contact" | translation : language }}
+                  </span></a
+                >
+              </li>
+
+              <!-- <li class="my-3 mt-md-5">
+                <button
+                  (click)="switchLanguage()"
+                  [ngClass]="{
+                    english: currentLanguage === 'en',
+                    arabic: currentLanguage === 'ar'
+                  }"
+                >
+                  {{ currentLanguage }}
+                </button>
+              </li> -->
+              <li class="my-3 my-md-5 m-3">
+                <span *ngIf="selectedLanguage === 'ar'">
+                  <!-- Content to be shown only when selectedLanguage is 'ar' -->
+                  <button
+                    type="button"
+                    (click)="switchLanguage('en')"
+                    class="langbtn"
+                  >
+                    English
+                  </button>
+                </span>
+                <span *ngIf="selectedLanguage === 'en'">
+                  <!-- Content to be shown only when selectedLanguage is 'ar' -->
+                  <button
+                    type="button"
+                    (click)="switchLanguage('ar')"
+                    class="langbtn"
+                  >
+                    العربية
+                  </button>
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

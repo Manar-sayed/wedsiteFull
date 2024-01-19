@@ -1,0 +1,245 @@
+<app-nav-bar></app-nav-bar>
+<div id="content-wrapper" [dir]="textDir">
+  <!--================ Banner Area =================-->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <h3 class="tt-title">
+          {{ "contactUs.mainTitle" | translation : language }}
+        </h3>
+      </div>
+    </div>
+  </div>
+  <!--================ End Banner Area =================-->
+  <!--================ Breadcrumb =================-->
+  <div class="container">
+    <div class="row">
+      <div class="breadcrumb d-flex justify-content-center">
+        <ul>
+          <li>
+            <a href="home">
+              {{ "contactUs.home" | translation : language }}
+            </a>
+          </li>
+          <li>
+            <i
+              class="icofont icofont-double-right fa-solid fa-angles-right"
+            ></i>
+          </li>
+          <li class="active">
+            <a href="contact">
+              {{ "contactUs.mainTitle" | translation : language }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--================ End Breadcrumb =================-->
+  <!--================ Contact Us =================-->
+  <div class="contact_us cellpadding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="icon_classes">
+            <i class="fa-solid fa-house"></i>
+            <h5>
+              <i class="icofont icofont-home"></i>
+              {{ "contactUs.visit" | translation : language }}
+            </h5>
+            <p>287 Vermont Road</p>
+            <p>Niceville 1500, Australia</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="icon_classes">
+            <h5>
+              <i class="icofont icofont-phone"></i>
+              {{ "contactUs.call" | translation : language }}
+            </h5>
+            <p>+1 (123) 456 - 7890</p>
+            <p>+1 (123) 456 - 7890</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="icon_classes last">
+            <h5>
+              <i class="icofont icofont-envelope"></i>
+              {{ "contactUs.email" | translation : language }}
+            </h5>
+            <p><a href="mailto:info@parcons.com">info@parcons.com</a></p>
+            <p>
+              <a href="mailto:support@parcons.com">support@parcons.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================ End Contact Us =================-->
+  <!--================ Contact Form =================-->
+  <div class="contact_form">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="tt-title text-center">
+          {{ "contactUs.free" | translation : language }}
+        </div>
+        <div class="simple-text">
+          <p>
+            {{ "contactUs.desc" | translation : language }}
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-10">
+          <div class=""></div>
+          <div class="contact_us2_form">
+            <form
+              action="contact_process.php"
+              (ngSubmit)="save()"
+              [formGroup]="contactusForm"
+              method="post"
+              id="contactusForm"
+            >
+              <div class="d_flex row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group top_bottom">
+                    <label for="name">
+                      {{ "contactUs.name" | translation : language }}
+                    </label>
+                    <input
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      type="text"
+                      formControlName="name"
+                    />
+                    <div
+                      class="text-danger mt-3"
+                      *ngIf="
+                        contactusForm.get('name')?.hasError('required') &&
+                        (contactusForm.get('name')?.dirty ||
+                          contactusForm.get('name')?.touched)
+                      "
+                    >
+                      {{ "contactUs.required" | translation : language }}
+                    </div>
+                    <div
+                      class="text-danger mt-3"
+                      *ngIf="
+                        contactusForm.get('name')?.hasError('minlength') &&
+                        (contactusForm.get('name')?.dirty ||
+                          contactusForm.get('name')?.touched)
+                      "
+                    >
+                      {{ "contactUs.length" | translation : language }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group top_bottom">
+                    <label for="phone">
+                      {{ "contactUs.phone" | translation : language }}
+                    </label>
+                    <input
+                      id="phone"
+                      class="form-control"
+                      type="text"
+                      formControlName="phone"
+                    />
+                    <div
+                      class="text-danger mt-3"
+                      *ngIf="
+                        contactusForm.get('phone')?.hasError('required') &&
+                        (contactusForm.get('phone')?.dirty ||
+                          contactusForm.get('phone')?.touched)
+                      "
+                    >
+                      {{ "contactUs.required" | translation : language }}
+                    </div>
+                    <div
+                      class="text-danger mt-3"
+                      *ngIf="
+                        contactusForm.get('phone')?.hasError('pattern') &&
+                        (contactusForm.get('phone')?.dirty ||
+                          contactusForm.get('phone')?.touched)
+                      "
+                    >
+                      {{ "contactUs.length" | translation : language }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12">
+                <div class="form-group Message top_bottom">
+                  <label for="exampleTextarea">
+                    {{ "contactUs.message" | translation : language }}
+                  </label>
+                  <textarea
+                    class="form-control w-100"
+                    id="message"
+                    name="message"
+                    formControlName="description"
+                  >
+                  </textarea>
+                  <div
+                    class="text-danger mt-3"
+                    *ngIf="
+                      contactusForm.get('description')?.hasError('required') &&
+                      (contactusForm.get('description')?.dirty ||
+                        contactusForm.get('description')?.touched)
+                    "
+                  >
+                    {{ "contactUs.required" | translation : language }}
+                  </div>
+                  <div
+                    class="text-danger mt-3"
+                    *ngIf="
+                      contactusForm.get('description')?.hasError('minlength') &&
+                      (contactusForm.get('description')?.dirty ||
+                        contactusForm.get('description')?.touched)
+                    "
+                  >
+                    {{ "contactUs.length" | translation : language }}
+                  </div>
+                </div>
+                <div class="form_btn">
+                  <button
+                    type="submit"
+                    class="btn sim-button button8"
+                    name="contactForm"
+                    value="contactForm"
+                    id="contactForm"
+                  >
+                    <span>
+                      {{ "contactUs.btn" | translation : language }}
+                      <i class="icofont icofont-tick-mark"></i
+                    ></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================ End Contact Form =================-->
+
+  <!--================ Map =================-->
+  <div class="map">
+    <div class="google-maps">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13667.155202115864!2d31.602150963920295!3d31.08780126663672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f77fed01608e91%3A0x3e4869e6d161b5e!2z2YXYs9iq2LTZgdmJINiv2YPYsdmG2LMg2KfZhNi52KfZhQ!5e0!3m2!1sar!2seg!4v1703863548770!5m2!1sar!2seg"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+  <!--================ End Map =================-->
+</div>
+<app-footer></app-footer>
