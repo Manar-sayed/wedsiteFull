@@ -1,1 +1,12 @@
 @import url(../../assets/styleMain.css);
+
+@media screen and (min-width:1000px) {
+    .simple-text{
+        height: 150px;
+    }
+}
+@media screen and (min-width:766px) {
+    .simple-text{
+        height: 230px;
+    }
+}

@@ -18,7 +18,7 @@ export class MessageAddComponent {
     private translatedashService: TranslatedashService
   ) {}
   contactusForm!: FormGroup;
-  currentLanguage: any = 'en';
+  currentLanguage: any = 'ar';
   textDir: any;
 
   public editPro: any;

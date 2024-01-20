@@ -4,7 +4,9 @@
   <div class="banner">
     <div class="container">
       <div class="row">
-        <h3 class="tt-title">About Us</h3>
+        <h3 class="tt-title">
+          {{ "about.mainTitle" | translation : language }}
+        </h3>
       </div>
     </div>
   </div>
@@ -14,9 +16,17 @@
     <div class="row">
       <div class="breadcrumb d-flex justify-content-center">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="index.html">
+              {{ "contactUs.home" | translation : language }}
+            </a>
+          </li>
           <li><i class="icofont icofont-double-right"></i></li>
-          <li><a href="aboutus_01.html">About Us</a></li>
+          <li>
+            <a href="aboutus_01.html">
+              {{ "about.mainTitle" | translation : language }}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -31,13 +41,13 @@
             <div class="single-sec">
               <div class="icon">
                 <i class="icofont icofont-calculations"></i>
-                <h4 class="sub-title">Cutting Edge Technology</h4>
+                <h4 class="sub-title">
+                  {{ "about_title_1" | translation : language }}
+                </h4>
               </div>
               <div class="simple-text">
                 <p>
-                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
-                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
-                  in.
+                  {{ "about_desc_1" | translation : language }}
                 </p>
               </div>
             </div>
@@ -46,13 +56,13 @@
             <div class="single-sec">
               <div class="icon">
                 <i class="icofont icofont-help-robot"></i>
-                <h4 class="sub-title">Fresh &amp; Latest Equipments</h4>
+                <h4 class="sub-title">
+                  {{ "about_title_2" | translation : language }}
+                </h4>
               </div>
               <div class="simple-text">
                 <p>
-                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
-                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
-                  in.
+                  {{ "about_desc_2" | translation : language }}
                 </p>
               </div>
             </div>
@@ -61,13 +71,13 @@
             <div class="single-sec">
               <div class="icon">
                 <i class="icofont icofont-under-construction-alt"></i>
-                <h4 class="sub-title">Hardworking &amp; Affordable Team</h4>
+                <h4 class="sub-title">
+                  {{ "about_title_3" | translation : language }}
+                </h4>
               </div>
               <div class="simple-text">
                 <p>
-                  Vivamus ac ultrices diam, vitae accumsan tellus. Integer
-                  sollicitudin vulputate lacus, congue vulputate nisl eleifend
-                  in.
+                  {{ "about_desc_3" | translation : language }}
                 </p>
               </div>
             </div>

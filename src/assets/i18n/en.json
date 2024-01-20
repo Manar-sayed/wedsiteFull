@@ -129,5 +129,12 @@
   "footer.visit": "Visit Us",
   "footer.call": "Call Us",
   "footer.email": "Email Us",
-  "footer.follow": "Follow Us"
+  "footer.follow": "Follow Us",
+
+  "about_title_1": "Cutting Edge Technology",
+  "about_title_2": "Fresh & Latest Equipments",
+  "about_title_3": "Hardworking & Affordable Team",
+  "about_desc_1": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in",
+  "about_desc_2": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in",
+  "about_desc_3": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in"
 }

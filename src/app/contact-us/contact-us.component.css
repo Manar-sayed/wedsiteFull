@@ -1,1 +1,5 @@
 @import url(../../assets/styleMain.css);
+
+input {
+  margin: 0% !important;
+}

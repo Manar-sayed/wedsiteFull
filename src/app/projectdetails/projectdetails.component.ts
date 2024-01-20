@@ -22,8 +22,8 @@ export class ProjectdetailsComponent implements AfterViewInit {
       autoplay: true, // Enable autoplay
       autoplayTimeout: 3000,
       navText: [
-        '<i class="fa fa-chevron-left"></i>',
-        '<i class="fa fa-chevron-right"></i>',
+        '<i class="fa fa-chevron-left fa-sm"></i>',
+        '<i class="fa fa-chevron-right fa-sm"></i>',
       ], // Custom navigation arrow icons
       responsive: {
         0: {
@@ -86,6 +86,7 @@ export class ProjectdetailsComponent implements AfterViewInit {
   ngOnInit(): void {
     this.translatedashService.getLanguage().subscribe((language) => {
       this.language = language;
+
       if (this.language === 'en') {
         this.textDir = 'ltr';
         console.log(this.textDir);

@@ -29,6 +29,12 @@
           "-ms-grid-column-span"
         ]
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
     ]
   },
   "browserslist": [

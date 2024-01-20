@@ -93,10 +93,8 @@
           <div class=""></div>
           <div class="contact_us2_form">
             <form
-              action="contact_process.php"
               (ngSubmit)="save()"
               [formGroup]="contactusForm"
-              method="post"
               id="contactusForm"
             >
               <div class="d_flex row">
@@ -106,6 +104,7 @@
                       {{ "contactUs.name" | translation : language }}
                     </label>
                     <input
+                      (input)="onInput()"
                       class="form-control"
                       id="name"
                       name="name"
@@ -113,17 +112,18 @@
                       formControlName="name"
                     />
                     <div
-                      class="text-danger mt-3"
+                      class="text-danger ms-3"
                       *ngIf="
-                        contactusForm.get('name')?.hasError('required') &&
-                        (contactusForm.get('name')?.dirty ||
-                          contactusForm.get('name')?.touched)
+                        (contactusForm.get('name')?.hasError('required') &&
+                          (contactusForm.get('name')?.dirty ||
+                            contactusForm.get('name')?.touched)) ||
+                        errortrue
                       "
                     >
                       {{ "contactUs.required" | translation : language }}
                     </div>
                     <div
-                      class="text-danger mt-3"
+                      class="text-danger ms-3"
                       *ngIf="
                         contactusForm.get('name')?.hasError('minlength') &&
                         (contactusForm.get('name')?.dirty ||
@@ -141,23 +141,25 @@
                       {{ "contactUs.phone" | translation : language }}
                     </label>
                     <input
+                      (input)="onInput()"
                       id="phone"
                       class="form-control"
                       type="text"
                       formControlName="phone"
                     />
                     <div
-                      class="text-danger mt-3"
+                      class="text-danger mt-1 ms-3"
                       *ngIf="
-                        contactusForm.get('phone')?.hasError('required') &&
-                        (contactusForm.get('phone')?.dirty ||
-                          contactusForm.get('phone')?.touched)
+                        (contactusForm.get('phone')?.hasError('required') &&
+                          (contactusForm.get('phone')?.dirty ||
+                            contactusForm.get('phone')?.touched)) ||
+                        errortrue
                       "
                     >
                       {{ "contactUs.required" | translation : language }}
                     </div>
                     <div
-                      class="text-danger mt-3"
+                      class="text-danger mt-1 ms-3"
                       *ngIf="
                         contactusForm.get('phone')?.hasError('pattern') &&
                         (contactusForm.get('phone')?.dirty ||
@@ -170,12 +172,13 @@
                 </div>
               </div>
 
-              <div class="col-md-12 col-sm-12">
+              <div class="col-md-12 col-sm-12 mt-5">
                 <div class="form-group Message top_bottom">
                   <label for="exampleTextarea">
                     {{ "contactUs.message" | translation : language }}
                   </label>
                   <textarea
+                    (input)="onInput()"
                     class="form-control w-100"
                     id="message"
                     name="message"
@@ -183,17 +186,18 @@
                   >
                   </textarea>
                   <div
-                    class="text-danger mt-3"
+                    class="text-danger mt-1 ms-3"
                     *ngIf="
-                      contactusForm.get('description')?.hasError('required') &&
-                      (contactusForm.get('description')?.dirty ||
-                        contactusForm.get('description')?.touched)
+                      (contactusForm.get('description')?.hasError('required') &&
+                        (contactusForm.get('description')?.dirty ||
+                          contactusForm.get('description')?.touched)) ||
+                      errortrue
                     "
                   >
                     {{ "contactUs.required" | translation : language }}
                   </div>
                   <div
-                    class="text-danger mt-3"
+                    class="text-danger mt-1 ms-3"
                     *ngIf="
                       contactusForm.get('description')?.hasError('minlength') &&
                       (contactusForm.get('description')?.dirty ||
@@ -203,6 +207,7 @@
                     {{ "contactUs.length" | translation : language }}
                   </div>
                 </div>
+
                 <div class="form_btn">
                   <button
                     type="submit"

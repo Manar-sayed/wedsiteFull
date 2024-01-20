@@ -18,7 +18,7 @@ export class MessageGetComponent {
     public router: Router,
     private translatedashService: TranslatedashService
   ) {}
-  currentLanguage: any = 'en';
+  currentLanguage: any = 'ar';
   textDir: any;
 
   messages: Contactmessage[] = [];

@@ -26,7 +26,7 @@ export class ServiceUpdateComponent {
     private translatedashService: TranslatedashService,
     @Inject(MAT_DIALOG_DATA) public data: { id: number }
   ) {}
-  currentLanguage: any = 'en';
+  currentLanguage: any = 'ar';
   textDir: any;
   id: number = 0;
   errortrue: any = false;
