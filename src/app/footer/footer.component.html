@@ -151,50 +151,58 @@
 <!--================ End Footer =================-->
 
 <!--================ Footer Strip =================-->
-<div class="footer_strip">
+<div class="footer_strip" [dir]="textDir">
   <div class="container-fluid">
-    <div class="row justify-content-around align-items-start">
+    <!-- align-items-start -->
+    <div class="row justify-content-around">
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <h4 class="sub-title text-start">
-          <i class="icofont icofont-home"></i>Visit Us
+        <h4 class="sub-title">
+          <i class="icofont icofont-home"></i>
+          {{ "footer.visit" | translation : language }}
         </h4>
         <p class="ms-5">
           {{ settingGet.describtion }}
         </p>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-2">
-        <h4 class="sub-title text-start">
-          <i class="icofont icofont-phone"></i> Call Us
+        <h4 class="sub-title">
+          <i class="icofont icofont-phone"></i>
+          {{ "footer.call" | translation : language }}
         </h4>
         <p class="ms-5">{{ settingGet.firstPhoneNumber }}</p>
         <p class="ms-5">{{ settingGet.secondPhoneNumber }}</p>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-2">
-        <h4 class="sub-title text-start">
-          <i class="icofont icofont-envelope"></i> Email Us
+        <h4 class="sub-title">
+          <i class="icofont icofont-envelope"></i>
+          {{ "footer.email" | translation : language }}
         </h4>
         <p class="ms-5">
           <a href="mailto:info@parcons.com">{{ settingGet.email }}</a>
         </p>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <h4 class="sub-title text-start">
-          <i class="icofont icofont-thumbs-up"></i> Follow Us
+
+      <div class="col-xs-12 col-sm-6 col-md-2">
+        <h4 class="sub-title">
+          <i class="icofont icofont-thumbs-up"></i>
+          {{ "footer.follow" | translation : language }}
         </h4>
-        <ul class="ms-5">
+        <!-- <ul class="bg-info d-flex justify-content-center">
+          <li> -->
+        <div class="icons d-flex justify-content-around">
+          <a href="#"><i class="icofont icofont-facebook"></i></a>
+          <a href="#"><i class="icofont icofont-twitter"></i></a>
+          <a href="#"><i class="icofont icofont-instagram"></i></a>
+          <a href="#"><i class="icofont icofont-skype"></i></a>
+        </div>
+        <!-- </li>
           <li>
-            <a href="#"><i class="icofont icofont-facebook"></i></a>
           </li>
           <li>
-            <a href="#"><i class="icofont icofont-twitter"></i></a>
           </li>
           <li>
-            <a href="#"><i class="icofont icofont-instagram"></i></a>
           </li>
-          <li>
-            <a href="#"><i class="icofont icofont-skype"></i></a>
-          </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     <!-- <div class="col-md-12 col-sm-12 col-xs-12 d-flex mt-5">

@@ -18,7 +18,11 @@ element.style {
   display: block;
 }
 @import url(../../assets/styleMain.css);
-
+.uldir.rtl {
+  /* right: -10px; */
+  position: relative;
+  margin-right: -17%;
+}
 button {
   padding: 3px 10px;
   margin-left: 10px;

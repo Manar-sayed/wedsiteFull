@@ -127,5 +127,10 @@
   "navbar.about": "من نحن",
   "navbar.contact": "تواصل معنا",
   "navbar.services": "الخدمات",
-  "navbar.Products": "المنتجات"
+  "navbar.Products": "المنتجات",
+
+  "footer.visit": "قم بزيارتنا",
+  "footer.call": "تواصل معنا",
+  "footer.email": "البريد الإلكترونى",
+  "footer.follow": "قم بمتابعتنا على"
 }

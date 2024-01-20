@@ -124,5 +124,10 @@
   "navbar.about": "About Us",
   "navbar.contact": "Contact Us",
   "navbar.services": "Services",
-  "navbar.Products": "Products"
+  "navbar.Products": "Products",
+
+  "footer.visit": "Visit Us",
+  "footer.call": "Call Us",
+  "footer.email": "Email Us",
+  "footer.follow": "Follow Us"
 }

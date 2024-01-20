@@ -17,12 +17,12 @@ export class ProjectdetailsComponent implements AfterViewInit {
     // Initialize Owl Carousel
     $('.owl-carousel').owlCarousel({
       loop: true,
-      nav: true, // Enable navigation arrows
+      nav: false, // Enable navigation arrows
       dots: true, // Disable pagination dots (if not needed)
       autoplay: true, // Enable autoplay
       autoplayTimeout: 3000,
       navText: [
-        '<i class="fa fa-chevron-left text-success"></i>',
+        '<i class="fa fa-chevron-left"></i>',
         '<i class="fa fa-chevron-right"></i>',
       ], // Custom navigation arrow icons
       responsive: {
@@ -106,12 +106,12 @@ export class ProjectdetailsComponent implements AfterViewInit {
             console.log(data);
 
             //get related work based on project id
-            // this.productService
-            //   .getAllByProductId(this.language, this.productId)
-            //   .subscribe((data) => {
-            //     this.allRelatedWork = data.items;
-            //     console.log('allRelatedWork-->', this.allRelatedWork);
-            //   });
+            this.productService
+              .getAllByProductId(this.language, this.productId)
+              .subscribe((data) => {
+                this.allRelatedWork = data.items;
+                console.log('allRelatedWork-->', this.allRelatedWork);
+              });
           })
       );
     });

@@ -36,7 +36,7 @@
         <div class="toggle-block-container">
           <nav class="main-nav clearfix">
             <ul class="">
-              <li class="active parent">
+              <li class="active parent" [class.rtl]="selectedLanguage === 'ar'">
                 <a href="home"
                   ><span>
                     {{ "navbar.home" | translation : language }}
@@ -52,18 +52,19 @@
               </li>
 
               <li class="parent">
-                <a
-                  ><span>
-                    {{ "navbar.services" | translation : language }}
-                    <i class="menu-toggle fa fa-angle-down"></i></span
+                <a class=""
+                  ><span class="">
+                    {{ "navbar.services" | translation : language
+                    }}<i
+                      class="menu-toggle fa fa-angle-down pe-5 pe-lg-0"
+                    ></i> </span
                 ></a>
-                <!-- <ul class="-mt-5" id="bginfo" *ngFor="let cat of categories">
-                  <li class="parent">
-                    <a href="services_02.html"><span> Service Two</span></a>
-                  </li>
-                </ul> -->
-                <ul>
-                  <li *ngFor="let cat of categories" class="parent">
+                <ul class=" ms-0 me-0 ps-0">
+                  <li
+                    *ngFor="let cat of categories"
+                    class="parent uldir"
+                    [class.rtl]="selectedLanguage === 'ar'"
+                  >
                     <a [routerLink]="['/services/', cat.id]"
                       ><span> {{ cat.name }}</span></a
                     >
@@ -105,7 +106,7 @@
                   {{ currentLanguage }}
                 </button>
               </li> -->
-              <li class="my-3 my-md-5 m-3">
+              <li class="my-3 my-md-5 mx-xl-1">
                 <span *ngIf="selectedLanguage === 'ar'">
                   <!-- Content to be shown only when selectedLanguage is 'ar' -->
                   <button

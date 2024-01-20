@@ -39,6 +39,7 @@ import { MessageAddComponent } from './_sharedService/contact_message/message-ad
 import { MessageGetComponent } from './_sharedService/contact_message/message-get/message-get.component';
 import { TranslationPipe } from './translation/translation.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MessageAddComponent,
     MessageGetComponent,
     TranslationPipe,
+    WhatsappButtonComponent,
   ],
   imports: [
     AppRoutingModule,
