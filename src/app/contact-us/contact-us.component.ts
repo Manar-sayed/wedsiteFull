@@ -6,6 +6,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslationService } from '../translation/translation.service';
 import { TranslatedashService } from '../translation/translatedash.service';
 import Swal from 'sweetalert2';
+import { SettingService } from '../_sharedService/setting.service';
+import { Setting } from '../_sharedService/setting';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,12 +15,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact-us.component.css'],
 })
 export class ContactUsComponent {
+  settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
+
   constructor(
     public messageService: ContactmessageService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
     private translatedashService: TranslatedashService,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private settingService: SettingService
   ) {}
   contactusForm!: FormGroup;
   language: any = 'en';
@@ -28,6 +33,7 @@ export class ContactUsComponent {
   public editPro: any;
   allGategory: any = [];
   ngOnInit(): void {
+    console.log('first');
     this.translatedashService.getLanguage().subscribe((language) => {
       this.language = language;
       if (this.language === 'en') {
@@ -38,7 +44,18 @@ export class ContactUsComponent {
         console.log(this.textDir);
       }
       console.log('lang from services', this.language);
+      this.settingService.getAllSetting().subscribe(
+        (data) => {
+          console.log('setting from footer');
+          this.settingGet = data;
+          console.log('this.settingGet', this.settingGet);
+        },
+        (error) => {
+          console.error('Error fetching setting:', error);
+        }
+      );
     });
+
     this.contactusForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(4)]),
       description: new FormControl('', [

@@ -1,24 +1,13 @@
 @import url(../../assets/styleMain.css);
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-nav .owl-prev {
+/* .project_details .owl-carousel .owl-nav .owl-next,
+.project_details .owl-carousel .owl-nav .owl-prev {
   width: 74px;
   height: 74px;
   border-radius: 50%;
-  background: #fff;
-  color: #f2c21a;
-}
+  background: transparent !important;
+  color: #f23a1a;
+} */
 
-.owl-carousel .owl-nav .owl-next:hover,
-.owl-carousel .owl-nav .owl-prev:hover {
-  background: #f2c21a;
-  color: #fff;
-}
-
-.scroll-row-container {
-  overflow-x: scroll;
-  white-space: nowrap;
-  max-width: 100%; /* Set a max-width if needed */
-}
 .productImg {
   width: 10px;
   height: 10px;
@@ -41,6 +30,36 @@ mat-card {
   height: 100px;
   margin: 10px;
 }
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+.img-responsive {
+  width: 6000px;
+  height: 200px;
+  /* object-fit: cover; */
+}
+
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #fff;
+  color: #f2c21a;
+}
+.owl-carousel .owl-nav .owl-next:hover,
+.owl-carousel .owl-nav .owl-prev:hover {
+  background: #f2c21a;
+  color: #fff;
+}
+
+.scroll-row-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  max-width: 100%; /* Set a max-width if needed */
+}
+
 .swiper {
   width: 600px;
   height: 300px;
@@ -75,3 +94,5 @@ h2 {
   color: var(--main-font-color);
   padding: 3px;
 }
+
+

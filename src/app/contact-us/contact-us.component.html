@@ -21,10 +21,11 @@
               {{ "contactUs.home" | translation : language }}
             </a>
           </li>
-          <li>
-            <i
-              class="icofont icofont-double-right fa-solid fa-angles-right"
-            ></i>
+          <li *ngIf="textDir === 'ltr'">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
+          <li *ngIf="textDir === 'rtl'" class="rotate-180">
+            <i class="icofont icofont-double-right"> </i>
           </li>
           <li class="active">
             <a href="contact">
@@ -47,8 +48,8 @@
               <i class="icofont icofont-home"></i>
               {{ "contactUs.visit" | translation : language }}
             </h5>
-            <p>287 Vermont Road</p>
-            <p>Niceville 1500, Australia</p>
+            <p *ngFor="let line of settingGet.describtion.split('\n')">{{ line }}</p>
+
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
@@ -57,8 +58,8 @@
               <i class="icofont icofont-phone"></i>
               {{ "contactUs.call" | translation : language }}
             </h5>
-            <p>+1 (123) 456 - 7890</p>
-            <p>+1 (123) 456 - 7890</p>
+            <p>{{ settingGet.firstPhoneNumber }}</p>
+            <p>{{ settingGet.secondPhoneNumber }}</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
@@ -67,9 +68,8 @@
               <i class="icofont icofont-envelope"></i>
               {{ "contactUs.email" | translation : language }}
             </h5>
-            <p><a href="mailto:info@parcons.com">info@parcons.com</a></p>
             <p>
-              <a href="mailto:support@parcons.com">support@parcons.com</a>
+              <a href="mailto:info@parcons.com">{{ settingGet.email }}</a>
             </p>
           </div>
         </div>

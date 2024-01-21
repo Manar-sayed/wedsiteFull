@@ -12,7 +12,7 @@
   </div>
   <!--================ End Banner Area =================-->
   <!--================ Breadcrumb =================-->
-  <div class="container">
+  <div class="container" [dir]="textDir">
     <div class="row">
       <div class="breadcrumb d-flex justify-content-center">
         <ul>
@@ -21,7 +21,12 @@
               {{ "contactUs.home" | translation : language }}
             </a>
           </li>
-          <li><i class="icofont icofont-double-right"></i></li>
+          <li *ngIf="textDir === 'ltr'">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
+          <li *ngIf="textDir === 'rtl'" class="rotate-180">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
           <li>
             <a href="projects">
               {{ "product.mainTitle" | translation : language }}
@@ -31,9 +36,10 @@
       </div>
     </div>
   </div>
+
   <!--================ End Breadcrumb =================-->
-  <div class="portfolio latest_work_01 project_3columns cellpadding">
-    <div class="container">
+  <div class="portfolio latest_work_01 project_3columns ">
+    <!-- <div class="container">
       <div class="row">
         <ul class="portfolio-sorting list-inline text-center">
           <li><a href="#" data-group="all" class="active">ALL</a></li>
@@ -42,244 +48,11 @@
           <li><a href="#" data-group="architecture">Architecture</a></li>
           <li><a href="#" data-group="commerical">Commerical</a></li>
         </ul>
-        <!--end portfolio sorting -->
-        <!-- <div class="mt-5">
-          <div class="row">
-            <div class="col-md-4">
-              <figure class="portfolio-item item pt-0 ">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img11.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Residential</h5>
-                    <a
-                      href="assets/images/project/img11.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img12.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Kitchen Interiors</h5>
-                    <a
-                      href="assets/images/project/img12.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img13.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Industries</h5>
-                    <a
-                      href="assets/images/project/img13.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="w-100"></div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img14.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Modern Architecture</h5>
-                    <a
-                      href="assets/images/project/img14.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img15.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Row Houses</h5>
-                    <a
-                      href="assets/images/project/img15.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img16.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Living Room Interior</h5>
-                    <a
-                      href="assets/images/project/img16.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img17.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Construction Services</h5>
-                    <a
-                      href="assets/images/project/img17.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img18.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Modern Architecture</h5>
-                    <a
-                      href="assets/images/project/img18.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-
-            <div class="col-md-4">
-              <figure class="portfolio-item item">
-                <a href="#">
-                  <img
-                    src="assets/images/project/img19.jpg"
-                    alt="Item 1"
-                    class="img-fluid"
-                  />
-                </a>
-                <div class="overlay">
-                  <div class="inner">
-                    <h5>Office Interiors Concepts</h5>
-                    <a
-                      href="assets/images/project/img19.jpg"
-                      class="zoom popupzoom"
-                      ><i class="icofont icofont-search"></i
-                    ></a>
-                    <a href="#" class="link"
-                      ><i class="icofont icofont-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </figure>
-            </div>
-          </div>
-        </div> -->
-
-        <!--end portfolio grid -->
       </div>
-      <!--end row -->
-    </div>
+    </div> -->
   </div>
 
-  <div class="project_01 project_service_page_01">
+  <div class="project_01 project_service_page_01 mt-5">
     <div class="container">
       <div *ngFor="let product of products">
         <div class="col-lg-4 col-sm-6 col-xs-12">

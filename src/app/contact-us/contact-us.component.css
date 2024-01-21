@@ -3,3 +3,8 @@
 input {
   margin: 0% !important;
 }
+
+input{
+  font-size: 1.1em;
+  padding: 5px;
+}

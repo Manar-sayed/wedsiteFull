@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, Inject } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
 import Swiper from 'swiper';
@@ -13,30 +21,43 @@ declare var $: any; // Declare jQuery (Owl Carousel depends on it)
   styleUrls: ['./projectdetails.component.css'],
 })
 export class ProjectdetailsComponent implements AfterViewInit {
+  @ViewChild('carousel') carousel!: ElementRef;
+  @ViewChild('carousel1') carousel1!: ElementRef;
+  shouldReload: boolean = true;
+
   ngAfterViewInit() {
     // Initialize Owl Carousel
-    $('.owl-carousel').owlCarousel({
+    $(this.carousel.nativeElement).owlCarousel({
       loop: true,
-      nav: false, // Enable navigation arrows
-      dots: true, // Disable pagination dots (if not needed)
-      autoplay: true, // Enable autoplay
+      nav: true,
+      dots: true,
+      autoplay: true,
       autoplayTimeout: 3000,
-      navText: [
-        '<i class="fa fa-chevron-left fa-sm"></i>',
-        '<i class="fa fa-chevron-right fa-sm"></i>',
-      ], // Custom navigation arrow icons
       responsive: {
-        0: {
-          items: 1,
-        },
-        800: {
-          items: 2,
-          margin: 20,
-        },
-        1000: {
-          items: 3,
-        },
+        0: { items: 1 },
+        800: { items: 2, margin: 20 },
+        1000: { items: 3 },
       },
+      navText: [
+        '<i class="fa fa-chevron-left  py-2  "></i>',
+        '<i class="fa fa-chevron-right  py-2 "></i>',
+      ],
+    });
+    $(this.carousel1.nativeElement).owlCarousel({
+      loop: true,
+      nav: true,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      responsive: {
+        0: { items: 1 },
+        800: { items: 2, margin: 20 },
+        1000: { items: 3 },
+      },
+      navText: [
+        '<i class="fa fa-chevron-left  py-2  "></i>',
+        '<i class="fa fa-chevron-right p-5  py-2 "></i>',
+      ],
     });
   }
   language: string = 'ar';
@@ -58,27 +79,6 @@ export class ProjectdetailsComponent implements AfterViewInit {
     private sanitizer: DomSanitizer,
     private translatedashService: TranslatedashService
   ) {}
-  swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
   setDefaultImage() {
     this.fullUrl = this.defaultImageUrl;
   }
@@ -101,6 +101,7 @@ export class ProjectdetailsComponent implements AfterViewInit {
             this.productId = p['id'];
             console.log('productId', this.productId);
             this.currentProduct = data;
+            //window.location.reload()
             this.fullUrl = this.imageUrl + this.currentProduct.photos[0].path;
             // console.log('fullUrl', this.fullUrl);
 

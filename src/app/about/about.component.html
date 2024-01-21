@@ -12,7 +12,7 @@
   </div>
   <!--================ End Banner Area =================-->
   <!--================ Breadcrumb =================-->
-  <div class="container">
+  <div class="container" [dir]="textDir">
     <div class="row">
       <div class="breadcrumb d-flex justify-content-center">
         <ul>
@@ -21,9 +21,14 @@
               {{ "contactUs.home" | translation : language }}
             </a>
           </li>
-          <li><i class="icofont icofont-double-right"></i></li>
+          <li *ngIf="textDir === 'ltr'">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
+          <li *ngIf="textDir === 'rtl'" class="rotate-180">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
           <li>
-            <a href="aboutus_01.html">
+            <a href="#">
               {{ "about.mainTitle" | translation : language }}
             </a>
           </li>

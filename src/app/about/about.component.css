@@ -1,12 +1,20 @@
 @import url(../../assets/styleMain.css);
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 991px) {
   .simple-text {
-    height: 100px;
+    height: 150px;
+  }
+  .sub-title {
+    height: 60px;
   }
 }
-@media screen and (min-width: 766px) {
+@media screen and (min-width: 766px) and (max-width: 990px) {
   .simple-text {
     height: 230px;
   }
+  .sub-title {
+    height: 60px;
+  }
 }
+
+

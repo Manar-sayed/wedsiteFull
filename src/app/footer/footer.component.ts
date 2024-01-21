@@ -34,7 +34,7 @@ export class FooterComponent implements OnInit {
     });
     this.settingService.getAllSetting().subscribe(
       (data) => {
-        console.log('setting from fotter');
+        console.log('setting from footer');
         this.settingGet = data;
         console.log(this.settingGet);
       },

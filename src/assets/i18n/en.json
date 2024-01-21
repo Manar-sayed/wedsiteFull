@@ -130,11 +130,22 @@
   "footer.call": "Call Us",
   "footer.email": "Email Us",
   "footer.follow": "Follow Us",
+  "whatsapp_btn": "Open whatsApp",
 
   "about_title_1": "Cutting Edge Technology",
   "about_title_2": "Fresh & Latest Equipments",
   "about_title_3": "Hardworking & Affordable Team",
   "about_desc_1": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in",
   "about_desc_2": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in",
-  "about_desc_3": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in"
+  "about_desc_3": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in",
+
+  "projectDetails.maintitle": "Project Details",
+  "projectDetails.home": "Home",
+  "projectDetails.projects": "Our Projects",
+  "projectDetails.ProjectDescription": "Project Description",
+  "projectDetails.relatedWork": "Related Projects",
+  "projectDetails.relatedWork_desc": "Sometimes you want to go where everybody knows your name. And they're always glad you came. Straight nin' the curveslatnin' the hills Someday the mountain will.",
+
+  "services.maintitle": "Our Services",
+  "services.home": "Home"
 }
