@@ -125,7 +125,7 @@ Table of Content:
   font-size: 0;
   padding-top: 40px;
   padding-bottom: 30px;
-  margin-left: 12px;
+  /* margin-left: 12px; */
   transition: none;
 }
 /*top line*/
@@ -154,6 +154,7 @@ Table of Content:
   padding-right: 20px;
   margin-right: 20px;
   vertical-align: middle;
+  background-color: #0c0c0c;
 }
 .tt-header .top-info:before {
   content: "";
@@ -3432,7 +3433,7 @@ ul.portfolio-sorting {
 .header_top_02 ul li,
 .header_top_02 ul li a {
   list-style: none;
-  float: inline-start;
+  /* float: inline-start; */
   font-family: "Lato", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -3455,12 +3456,12 @@ ul.portfolio-sorting {
   font-size: 15px;
   font-weight: 400;
   color: #fff;
-  text-align: right;
+  /* text-align: right; */
 }
 .header_top_02 p span {
   font-size: 18px;
   font-weight: 600;
-  padding-left: 13px;
+  /* padding-left: 13px; */
 }
 .hmslider2 .slider_content {
   width: 60%;

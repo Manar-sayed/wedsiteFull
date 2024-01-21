@@ -42,3 +42,6 @@ button.arabic {
   background-color: var(--main-light-two);
   color: white;
 }
+.dropdown-menu {
+  background-color: var(--shadow-color);
+}

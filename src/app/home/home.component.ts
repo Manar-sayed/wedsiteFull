@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { TranslationService } from '../translation/translation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
+import { ProductService } from '../_sharedService/_services/product.service';
+import { Product } from '../_sharedService/_models/product';
+import { CategoryService } from '../_sharedService/_services/category.service';
+import { Category } from '../_sharedService/_models/category';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,17 +20,19 @@ export class HomeComponent {
 
   translatedDirAttribute: any = '';
   language: string = 'ar';
+  products: Product[] = [];
+  categorys: Category[] = [];
+
   textDir: any;
   constructor(
     private translationService: TranslationService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
-    private translatedashService: TranslatedashService
+    private translatedashService: TranslatedashService,
+    private productService: ProductService,
+    private categoryService: CategoryService
   ) {}
 
-  // ngOnInit() {
-  //   this.translateDirAttribute();
-  // }
   ngOnInit() {
     this.translatedashService.getLanguage().subscribe((language) => {
       this.language = language;
@@ -38,19 +44,30 @@ export class HomeComponent {
         console.log(this.textDir);
       }
     });
+    this.loadProducts(); // You can call your loadProducts function here
   }
 
-  // switchLanguage() {
-  //   // Toggle between 'en' (English) and 'ar' (Arabic) for demonstration purposes
-  //   const currentLanguage = this.translationService.getCurrentLanguage();
-  //   const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-
-  //   this.translationService.setLanguage(newLanguage);
-  //   this.translateDirAttribute();
-  // }
-
-  // private translateDirAttribute() {
-  //   this.translatedDirAttribute =
-  //     this.translationService.translateAttribute('dir');
-  // }
+  loadProducts() {
+    const index = 0;
+    const size = 20;
+    // all products
+    this.productService.getAllProducts(this.language, index, size).subscribe(
+      (data) => {
+        this.products = data.items;
+        console.log(this.products);
+      },
+      (error) => {
+        console.error('Error fetching products:', error);
+      }
+    );
+    this.categoryService.getAllCategory(this.language, index, size).subscribe(
+      (data) => {
+        this.categorys = data.items;
+        console.log(this.categorys);
+      },
+      (error) => {
+        console.error('Error fetching categorys:', error);
+      }
+    );
+  }
 }

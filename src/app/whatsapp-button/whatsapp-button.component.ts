@@ -17,7 +17,7 @@ import {
   animations: [
     trigger('rotateAndScale', [
       state('normal', style({ transform: 'rotate(0deg) scale(1)' })),
-      state('rotated', style({ transform: 'rotate(360deg) scale(1.1)' })),
+      state('rotated', style({ transform: 'rotate(360deg) scale(1.2)' })),
       transition('normal <=> rotated', animate('3s ease-in-out')),
     ]),
   ],
