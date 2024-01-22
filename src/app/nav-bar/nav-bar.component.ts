@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownMenu } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,6 +15,8 @@ import { Setting } from '../_sharedService/setting';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent {
+  isLargeScreen = false;
+
   translatedDirAttribute: any;
   currentLanguage: any;
   language: string = 'ar';
@@ -31,6 +33,11 @@ export class NavBarComponent {
   categories: Category[] = [];
   settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenSize();
+  }
+
   ngOnInit(): void {
     this.translatedashService.getLanguage().subscribe((language) => {
       this.language = language;
@@ -42,6 +49,7 @@ export class NavBarComponent {
         console.log(this.textDir);
       }
       this.loadProducts();
+      this.checkScreenSize();
     });
     let alldrpdwn = document.querySelectorAll('.dropdow-container');
     alldrpdwn.forEach((item: any) => {
@@ -54,7 +62,10 @@ export class NavBarComponent {
       });
     });
   }
-
+  private checkScreenSize(): void {
+    const screenWidth = window.innerWidth;
+    this.isLargeScreen = screenWidth >= 960; // Adjust the breakpoint as needed
+  }
   loadProducts() {
     const index = 0;
     const size = 20;

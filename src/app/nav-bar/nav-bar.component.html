@@ -24,7 +24,7 @@
       </div>
     </div>
   </div>
-  <div class="tt-header bg-transparent-sm" [dir]="textDir">
+  <div class="tt-header bg-transparent-sm pb-3" [dir]="textDir">
     <div class="container bg-transparent-sm">
       <div class="top-inner clearfix">
         <div class="logo pull-left main-logo">
@@ -36,14 +36,14 @@
         <div class="cmn-toggle-switch"><span></span></div>
       </div>
       <div
-        class="toggle-block nav w-100 d-xl-flex justify-content-between col-lg-6"
+        class="toggle-block nav w-100 d-lg-flex justify-content-around col-lg-6"
       >
         <div
-          class="toggle-block-container w-100 d-xl-flex justify-content-between"
+          class="toggle-block-container w-100 d-lg-flex justify-content-around"
         >
-          <nav class="main-nav clearfix w-100">
-            <ul class="d-xl-flex w-100 justify-content-between">
-              <li class="active parent" [class.rtl]="selectedLanguage === 'ar'">
+          <nav class="main-nav clearfix d-flex w-100">
+            <ul class="d-lg-flex w-100 justify-content-around">
+              <li class="active parent">
                 <a href="home"
                   ><span>
                     {{ "navbar.home" | translation : language }}
@@ -102,7 +102,7 @@
                   </span></a
                 >
               </li>
-              <li class="my-3 my-md-5">
+              <li class="my-3 my-md-5" *ngIf="isLargeScreen">
                 <div class="dropdown">
                   <button
                     class="langbtn dropdown-toggle"
@@ -136,19 +136,7 @@
                 </div>
               </li>
 
-              <!-- <li class="my-3 mt-md-5">
-                <button
-                  (click)="switchLanguage()"
-                  [ngClass]="{
-                    english: currentLanguage === 'en',
-                    arabic: currentLanguage === 'ar'
-                  }"
-                >
-                  {{ currentLanguage }}
-                </button>
-              </li> -->
-
-              <!-- <li class="my-3 my-md-5 mx-xl-1">
+              <li class="my-3 my-md-5 mx-xl-1" *ngIf="!isLargeScreen">
                 <span *ngIf="selectedLanguage === 'ar'">
                   <button
                     type="button"
@@ -167,7 +155,7 @@
                     العربية
                   </button>
                 </span>
-              </li> -->
+              </li>
             </ul>
           </nav>
         </div>

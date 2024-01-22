@@ -175,7 +175,7 @@ Table of Content:
   display: none;
 }
 .tt-header .top-info a:hover {
-  color: #242424;
+  /* color: #242424; */
 }
 .tt-header .top-social li {
   display: inline-block;
@@ -763,7 +763,7 @@ body {
   .tt-header .main-nav > ul > li > ul > li.active > a:after,
   .tt-header .main-nav > ul > li > ul > li.select > a:before,
   .tt-header .main-nav > ul > li > ul > li.select > a:after {
-    background: rgba(0, 0, 0, 0.55);
+    /* background: rgba(0, 0, 0, 0.55); */
   }
   .tt-header .main-nav > ul > li > ul > li.select > a .menu-toggle {
     -webkit-transform: rotate(180deg);
@@ -996,7 +996,7 @@ body {
   -o-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
-  width: 60%;
+  width: 80%;
 }
 .button8 a {
   color: #fff;
@@ -1458,7 +1458,7 @@ body {
   padding-top: 96px;
   background: url("../assets/images/home1/service_bg.jpg") no-repeat;
   background-size: cover;
-  height: 565px;
+  /* height: 565px; */
   background-attachment: fixed;
 }
 .services_01 .simple-text p {
@@ -3405,11 +3405,6 @@ ul.portfolio-sorting {
   margin-top: 0;
 }
 
-/* #bginfo {
-  position: absolute;
-  margin-top: 40px;
-  top: 60px;
-} */
 @media (min-width: 992px) {
   .header2 .tt-header .main-nav > ul > li > a {
     color: #fff;

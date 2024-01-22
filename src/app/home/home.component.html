@@ -228,8 +228,12 @@
 
   <!-- <app-services></app-services> -->
   <!--================ Services Section =================-->
+
+  <!-- <div  class="d-flex  bg-info">
+    <div>mmmm</div>
+  </div> -->
   <div class="services_01">
-    <div class="container">
+    <div class="px-5 mx-5">
       <div class="row">
         <div class="tt-title">
           {{ "services_mainTitle" | translation : language }}
@@ -240,95 +244,43 @@
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="owl-carousel owl-carousel1 owl-theme">
-          <div class="item">
-            <div class="single_service">
-              <div class="image image-opacity-on-hover image-zoom-on-hover">
-                <img
-                  src="assets/images/home1/service1.jpg"
-                  alt="Service1"
-                  class="img-responsive"
-                />
-              </div>
-              <div class="content">
-                <h4 class="sub-title">
-                  {{ "services_serv1_title" | translation : language }}
-                </h4>
-                <div class="simple-text">
-                  <p>
-                    {{ "services_serv1_desc" | translation : language }}
-                  </p>
-                </div>
-                <div class="wrapper-inner-tab-backgrounds-first">
-                  <div class="sim-button button8">
-                    <a href="#"
-                      ><span
-                        >{{ "services_moreBtn" | translation : language }}
-                        <i class="icofont icofont-rounded-right"></i></span
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="item">
-            <div class="single_service">
-              <div class="image image-opacity-on-hover image-zoom-on-hover">
-                <img
-                  src="assets/images/home1/service2.jpg"
-                  alt="Service1"
-                  class="img-responsive"
-                />
-              </div>
-              <div class="content">
-                <h4 class="sub-title">
-                  {{ "services_serv2_title" | translation : language }}
-                </h4>
-                <div class="simple-text">
-                  <p>
-                    {{ "services_serv2_desc" | translation : language }}
-                  </p>
+      <div class="">
+        <div class="w-100 d-md-flex p-0 m-0">
+          <!-- <div
+          class="owl-carousel owl-carousel6 owl-theme owl-loaded owl-drag w-100 d-flex gap-3"
+        > -->
+          <div
+            *ngFor="let item of categorys"
+            class="mx-md-0 col-12 col-md-4 mb-3"
+          >
+            <div class="item">
+              <div class="single_service">
+                <div class="image image-opacity-on-hover image-zoom-on-hover">
+                  <img
+                    src="assets/images/home1/service2.jpg"
+                    alt="Service1"
+                    class="img-responsive"
+                  />
                 </div>
-                <div class="wrapper-inner-tab-backgrounds-first">
-                  <div class="sim-button button8">
-                    <a href="#"
-                      ><span
-                        >{{ "services_moreBtn" | translation : language }}
-                        <i class="icofont icofont-rounded-right"></i></span
-                    ></a>
+                <div class="content">
+                  <h4 class="sub-title">
+                    {{ item.name }}
+                  </h4>
+                  <div class="simple-text">
+                    <p>
+                      {{ item.describtion }}
+                    </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="single_service">
-              <div class="image image-opacity-on-hover image-zoom-on-hover">
-                <img
-                  src="assets/images/home1/service3.jpg"
-                  alt="Service1"
-                  class="img-responsive"
-                />
-              </div>
-              <div class="content">
-                <h4 class="sub-title">
-                  {{ "services_serv3_title" | translation : language }}
-                </h4>
-                <div class="simple-text">
-                  <p>
-                    {{ "services_serv3_desc" | translation : language }}
-                  </p>
-                </div>
-                <div class="wrapper-inner-tab-backgrounds-first">
-                  <div class="sim-button button8">
-                    <a href="#"
-                      ><span
-                        >{{ "services_moreBtn" | translation : language }}
-                        <i class="icofont icofont-rounded-right"></i></span
-                    ></a>
+                  <div class="wrapper-inner-tab-backgrounds-first">
+                    <div class="sim-button button8">
+                      <a [routerLink]="['/services/', item.id]"
+                        ><span
+                          >{{ "services_moreBtn" | translation : language }}
+                          <!-- <i class="icofont icofont-rounded-right"></i> -->
+                        </span></a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -498,33 +450,37 @@
         </ul> -->
         <!--end portfolio sorting -->
         <div class="portfolio-items list-unstyled mt-5">
-          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["residential"]'>
-            <figure class="portfolio-item item">
-              <a href="#">
-                <img
-                  src="assets/images/project/img11.jpg"
-                  alt="Item 1"
-                  class="img-responsive"
-                />
-              </a>
-              <div class="overlay">
-                <div class="inner">
-                  <h5>Residential</h5>
-                  <a
-                    href="assets/images/project/img11.jpg"
-                    class="zoom popupzoom"
-                    ><i class="icofont icofont-search"></i
-                  ></a>
-                  <a href="#" class="link"
-                    ><i class="icofont icofont-link"></i
-                  ></a>
+          <div *ngFor="let item of products">
+            <div
+              class="col-md-4 col-sm-6 col-xs-6"
+              data-groups='["residential"]'
+            >
+              <figure class="portfolio-item item">
+                <a href="#">
+                  <img
+                    src="assets/images/project/img11.jpg"
+                    alt="Item 1"
+                    class="img-responsive"
+                  />
+                </a>
+                <div class="overlay">
+                  <div class="inner">
+                    <h5>{{ item.name }}</h5>
+                    <a
+                      href="assets/images/project/img11.jpg"
+                      class="zoom popupzoom"
+                      ><i class="icofont icofont-search"></i
+                    ></a>
+                    <a href="#" class="link"
+                      ><i class="icofont icofont-link"></i
+                    ></a>
+                  </div>
                 </div>
-                <!-- end .inner -->
-              </div>
-            </figure>
+              </figure>
+            </div>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["interiors"]'>
+          <!-- <div class="col-md-4 col-sm-6 col-xs-6" data-groups='["interiors"]'>
             <figure class="portfolio-item item">
               <a href="#">
                 <img
@@ -545,7 +501,6 @@
                     ><i class="icofont icofont-link"></i
                   ></a>
                 </div>
-                <!-- end .inner -->
               </div>
             </figure>
           </div>
@@ -574,7 +529,6 @@
                     ><i class="icofont icofont-link"></i
                   ></a>
                 </div>
-                <!-- end .inner -->
               </div>
             </figure>
           </div>
@@ -603,7 +557,6 @@
                     ><i class="icofont icofont-link"></i
                   ></a>
                 </div>
-                <!-- end .inner -->
               </div>
             </figure>
           </div>
@@ -629,7 +582,6 @@
                     ><i class="icofont icofont-link"></i
                   ></a>
                 </div>
-                <!-- end .inner -->
               </div>
             </figure>
           </div>
@@ -655,13 +607,9 @@
                     ><i class="icofont icofont-link"></i
                   ></a>
                 </div>
-                <!-- end .inner -->
               </div>
             </figure>
-          </div>
-          <!-- sizer -->
-          <!-- <div class="col-md-4 col-sm-6 col-xs-6 shuffle_sizer"></div> -->
-          <!--end portfolio grid -->
+          </div> -->
         </div>
         <!--end row -->
       </div>
