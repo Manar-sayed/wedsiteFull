@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactmessageService } from '../_sharedService/contact_message/contactmessage.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ import { Setting } from '../_sharedService/setting';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css'],
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements OnInit {
   settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
 
   constructor(
@@ -34,8 +34,8 @@ export class ContactUsComponent {
   allGategory: any = [];
   ngOnInit(): void {
     console.log('first');
-    this.translatedashService.getLanguage().subscribe((language) => {
-      this.language = language;
+    this.translatedashService.selectedLanguage$.subscribe((lan) => {
+      this.language = lan;
       if (this.language === 'en') {
         this.textDir = 'ltr';
         console.log(this.textDir);

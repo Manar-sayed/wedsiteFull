@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'constructios';
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'ar']);
-    translate.setDefaultLang('ar');
+    translate.setDefaultLang('en');
   }
 
   switchLanguage(language: string) {

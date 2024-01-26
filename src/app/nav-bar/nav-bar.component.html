@@ -50,16 +50,24 @@
                   </span></a
                 >
               </li>
-              <li class="parent">
+              <!-- <li class="parent">
                 <a href="about"
                   ><span>
                     {{ "navbar.about" | translation : language }}
                   </span></a
                 >
+              </li> -->
+              <li class="parent">
+                <a
+                  [routerLink]="['/about']"
+                  [queryParams]="{ lang: selectedLanguage }"
+                >
+                  <span>{{ "navbar.about" | translation : language }}</span>
+                </a>
               </li>
 
               <li class="parent">
-                <a class=""
+                <a href="allServices"
                   ><span class="">
                     {{ "navbar.services" | translation : language
                     }}<i

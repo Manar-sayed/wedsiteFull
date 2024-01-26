@@ -62,6 +62,16 @@ export class NavBarComponent {
       });
     });
   }
+  switchLanguage(newLanguage: string) {
+    console.log(`Switching to ${newLanguage}`);
+    this.selectedLanguage = newLanguage;
+    this.translatedashService.setLanguage(newLanguage);
+  }
+  // switchLanguage(newLanguage: string) {
+  //   console.log(`Switching to ${newLanguage}`);
+  //   this.selectedLanguage = newLanguage;
+  //   this.translatedashService.setLanguage(newLanguage);
+  // }
   private checkScreenSize(): void {
     const screenWidth = window.innerWidth;
     this.isLargeScreen = screenWidth >= 960; // Adjust the breakpoint as needed
@@ -89,26 +99,5 @@ export class NavBarComponent {
         console.error('Error fetching setting:', error);
       }
     );
-  }
-  switchLanguage(newLanguage: string) {
-    console.log(`Switching to ${newLanguage}`);
-    this.selectedLanguage = newLanguage;
-    this.translatedashService.setLanguage(newLanguage);
-  }
-  // ngOnInit() {
-  //   this.translateDirAttribute();
-  //   this.currentLanguage = this.translationService.getCurrentLanguage();
-  // }
-
-  // switchLanguage() {
-  //   const newLanguage = this.currentLanguage === 'en' ? 'ar' : 'en';
-  //   this.translationService.setLanguage(newLanguage);
-  //   this.translateDirAttribute();
-  //   this.currentLanguage = newLanguage;
-  // }
-
-  private translateDirAttribute() {
-    this.translatedDirAttribute =
-      this.translationService.translateAttribute('dir');
   }
 }

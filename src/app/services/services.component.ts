@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  OnInit,
   Renderer2,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,7 +16,7 @@ import { ProductService } from '../_sharedService/_services/product.service';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css'],
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit {
   language: string = 'ar';
   categoryId: any;
   products: Product[] = [];

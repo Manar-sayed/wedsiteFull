@@ -1,0 +1,79 @@
+<app-nav-bar></app-nav-bar>
+<div id="content-wrapper">
+  <!--================ Banner Area =================-->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <h3 class="tt-title">
+          {{ "services.maintitle" | translation : language }}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" [dir]="textDir">
+    <div class="row">
+      <div class="breadcrumb d-flex justify-content-center">
+        <ul>
+          <li>
+            <a href="home">
+              {{ "contactUs.home" | translation : language }}
+            </a>
+          </li>
+          <li *ngIf="textDir === 'ltr'">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
+          <li *ngIf="textDir === 'rtl'" class="rotate-180">
+            <i class="icofont icofont-double-right"> </i>
+          </li>
+          <li>
+            <a href="projects">
+              {{ "services.maintitle" | translation : language }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--================ End Breadcrumb =================-->
+  <div class="portfolio latest_work_01 project_3columns"></div>
+
+  <div class="project_01 project_service_page_01 mt-5">
+    <div class="container">
+      <div *ngFor="let item of categorys">
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+          <div class="single_service">
+            <div class="image image-opacity-on-hover image-zoom-on-hover">
+              <img
+                src="../../assets/images/project/img11.jpg"
+                alt="Service6"
+                class="img-responsive"
+              />
+            </div>
+
+            <div class="content">
+              <h4 class="sub-title">{{ item.name }}</h4>
+              <div class="simple-text">
+                <p>
+                  {{ item.describtion }}
+                </p>
+              </div>
+              <div class="wrapper-inner-tab-backgrounds-first">
+                <div class="sim-button button8">
+                  <a [routerLink]="['/services/', item.id]"
+                    ><span
+                      >View More
+                      <i class="icofont icofont-rounded-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

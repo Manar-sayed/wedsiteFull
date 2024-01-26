@@ -7,12 +7,14 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProjectdetailsComponent } from './projectdetails/projectdetails.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ServicesComponent } from './services/services.component';
+import { MainServicePageComponent } from './main-service-page/main-service-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'allServices', component: MainServicePageComponent },
   { path: 'services/:id', component: ServicesComponent },
   { path: 'detalis/:id', component: ProjectdetailsComponent },
   { path: 'dashboard', component: NavigationComponent },

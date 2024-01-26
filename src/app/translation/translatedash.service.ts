@@ -76,6 +76,8 @@ export class TranslatedashService {
     //   'product.deleteDesc': 'Are you Sure?',
     // },
     en: enTranslations,
+    ar: arTranslations,
+
     // ar: {
     //   'dashboard.title': 'الرئيسية',
     //   'dashboard.product': 'المنتجات',
@@ -146,21 +148,29 @@ export class TranslatedashService {
     //   'product.deleteMainTitle': 'حذف العنصر الحالى',
     //   'product.deleteDesc': 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
     // },
-    ar: arTranslations,
   };
   translate(key: string, language: string): string {
     return this.translations[language][key] || key;
   }
 
-  private languageSubject = new BehaviorSubject<string>('ar');
-  public language$ = this.languageSubject.asObservable();
+  // private languageSubject = new BehaviorSubject<string>('ar');
+  // public language$ = this.languageSubject.asObservable();
+  private selectedLanguageSubject = new BehaviorSubject<string>('ar');
+  selectedLanguage$: Observable<string> = this.selectedLanguageSubject.asObservable();
 
-  setLanguage(language: string): void {
-    this.languageSubject.next(language);
+
+  // setLanguage(language: string): void {
+  //   this.languageSubject.next(language);
+  // }
+  setLanguage(newLanguage: string) {
+    this.selectedLanguageSubject.next(newLanguage);
   }
 
   getLanguage(): Observable<string> {
-    return this.language$;
+    return this. selectedLanguage$;
   }
+  // getLanguage(): Observable<string> {
+  //   return this.language$;
+  // }
   constructor() {}
 }

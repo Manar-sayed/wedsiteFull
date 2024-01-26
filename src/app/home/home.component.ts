@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { TranslationService } from '../translation/translation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -35,6 +35,7 @@ export class HomeComponent implements AfterViewInit {
     private productService: ProductService,
     private categoryService: CategoryService
   ) {}
+
   ngAfterViewInit() {
     $(this.carousel.nativeElement).owlCarousel({
       loop: true,
@@ -109,4 +110,5 @@ export class HomeComponent implements AfterViewInit {
       }
     );
   }
+
 }

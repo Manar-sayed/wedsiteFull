@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslationService } from '../translation/translation.service';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -13,7 +13,8 @@ import { ProductService } from '../_sharedService/_services/product.service';
 export class AboutComponent {
   translatedDirAttribute: any = '';
   products: Product[] = [];
-  language: string = 'ar';
+  // language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   constructor(
     private translationService: TranslationService,
@@ -24,7 +25,7 @@ export class AboutComponent {
   ) {}
 
   ngOnInit() {
-    this.translatedashService.getLanguage().subscribe((language) => {
+    this.translatedashService.selectedLanguage$.subscribe((language) => {
       this.language = language;
       if (this.language === 'en') {
         this.textDir = 'ltr';
@@ -35,4 +36,16 @@ export class AboutComponent {
       }
     });
   }
+  // ngOnInit() {
+  //   this.translatedashService.getLanguage().subscribe((language) => {
+  //     this.language = language;
+  //     if (this.language === 'en') {
+  //       this.textDir = 'ltr';
+  //       console.log(this.textDir);
+  //     } else {
+  //       this.textDir = 'rtl';
+  //       console.log(this.textDir);
+  //     }
+  //   });
+  // }
 }

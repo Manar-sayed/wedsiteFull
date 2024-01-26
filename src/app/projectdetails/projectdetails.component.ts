@@ -102,7 +102,7 @@ export class ProjectdetailsComponent implements AfterViewInit {
             console.log('productId', this.productId);
             this.currentProduct = data;
             //window.location.reload()
-            this.fullUrl = this.imageUrl + this.currentProduct.photos[0].path;
+            this.fullUrl = this.imageUrl + this.currentProduct.photos[0]?.path;
             // console.log('fullUrl', this.fullUrl);
 
             console.log(data);

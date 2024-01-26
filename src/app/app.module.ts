@@ -40,6 +40,7 @@ import { MessageGetComponent } from './_sharedService/contact_message/message-ge
 import { TranslationPipe } from './translation/translation.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
+import { MainServicePageComponent } from './main-service-page/main-service-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MessageGetComponent,
     TranslationPipe,
     WhatsappButtonComponent,
+    MainServicePageComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -88,8 +90,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatProgressSpinnerModule,
 
     TranslateModule.forRoot({
-      // defaultLanguage: 'en',
-      // useDefaultLang: true,
+      defaultLanguage: 'en',
+      useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
