@@ -21,7 +21,7 @@ export class NavBarComponent {
   currentLanguage: any;
   @Input() language: any;
   textDir: any;
-  selectedLanguage: string = 'en';
+  // selectedLanguage: string = 'en';
 
   constructor(
     private el: ElementRef,
@@ -64,7 +64,7 @@ export class NavBarComponent {
   }
   switchLanguage(newLanguage: string) {
     console.log(`Switching to ${newLanguage}`);
-    this.selectedLanguage = newLanguage;
+    // this.selectedLanguage = newLanguage;
     this.translatedashService.setLanguage(newLanguage);
   }
   // switchLanguage(newLanguage: string) {

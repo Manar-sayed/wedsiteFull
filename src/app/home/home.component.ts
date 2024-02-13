@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { TranslationService } from '../translation/translation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -24,7 +31,7 @@ export class HomeComponent implements AfterViewInit {
 
   translatedDirAttribute: any = '';
   @Input() language: any;
-    products: Product[] = [];
+  products: Product[] = [];
   categorys: Category[] = [];
   textDir: any;
   constructor(
@@ -110,5 +117,4 @@ export class HomeComponent implements AfterViewInit {
       }
     );
   }
-
 }

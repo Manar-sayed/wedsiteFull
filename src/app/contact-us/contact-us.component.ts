@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ContactmessageService } from '../_sharedService/contact_message/contactmessage.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ import { Setting } from '../_sharedService/setting';
 })
 export class ContactUsComponent implements OnInit {
   settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
-
+  @Input() language: any;
   constructor(
     public messageService: ContactmessageService,
     public activatedRoute: ActivatedRoute,
@@ -26,7 +26,6 @@ export class ContactUsComponent implements OnInit {
     private settingService: SettingService
   ) {}
   contactusForm!: FormGroup;
-  language: any = 'en';
   textDir: any;
   errortrue: any = false;
 
@@ -43,6 +42,7 @@ export class ContactUsComponent implements OnInit {
         this.textDir = 'rtl';
         console.log(this.textDir);
       }
+
       console.log('lang from services', this.language);
       this.settingService.getAllSetting().subscribe(
         (data) => {
@@ -104,60 +104,3 @@ export class ContactUsComponent implements OnInit {
     });
   }
 }
-// language: string = 'ar';
-// textDir: any;
-// constructor(
-//   public messageService: ContactmessageService,
-//   public activatedRoute: ActivatedRoute,
-//   private translationService: TranslationService,
-//   private translatedashService: TranslatedashService,
-
-//   public router: Router
-// ) {}
-// contactusForm!: FormGroup;
-
-// public editPro: any;
-// allGategory: any = [];
-// ngOnInit(): void {
-//   this.translatedashService.getLanguage().subscribe((language) => {
-//     this.language = language;
-//     if (this.language === 'en') {
-//       this.textDir = 'ltr';
-//       console.log(this.textDir);
-//     } else {
-//       this.textDir = 'rtl';
-//       console.log(this.textDir);
-//     }
-//     this.contactusForm = new FormGroup({
-//       name: new FormControl('', [
-//         Validators.required,
-//         Validators.minLength(4),
-//       ]),
-//       description: new FormControl('', [
-//         Validators.required,
-//         Validators.minLength(4),
-//       ]),
-//       phone: new FormControl('', [
-//         Validators.required,
-//         Validators.pattern('[0-9 ]{11}'),
-//       ]),
-//     });
-//   });
-// }
-
-// save() {
-//   if (this.contactusForm.valid) {
-//     const formData = this.contactusForm.value;
-//     this.messageService.create(formData).subscribe(
-//       (response) => {
-//         console.log('Contact form added successfully:', response);
-//         this.router.navigate(['/dash/listproduct']);
-//       },
-//       (error) => {
-//         console.error('Error adding Contact Form:', error);
-//       }
-//     );
-//   } else {
-//     console.error('Form is invalid');
-//   }
-// }

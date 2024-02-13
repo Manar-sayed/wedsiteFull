@@ -9,6 +9,8 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { Setting } from '../_sharedService/setting';
+import { SettingService } from '../_sharedService/setting.service';
 
 @Component({
   selector: 'app-whatsapp-button',
@@ -28,15 +30,19 @@ export class WhatsappButtonComponent {
   rotateAndScaleState: 'normal' | 'rotated' = 'normal';
 
   constructor(
+    private settingService: SettingService,
     private translationService: TranslationService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
     private translatedashService: TranslatedashService
   ) {}
+
+  settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
   openWhatsApp(): void {
-    // Replace the phone number and message as needed
+    // Replace the phone number and message as needed  location
+
     window.open(
-      'https://wa.me/1234567890?text=Hello%20from%20Angular%20App',
+      `https://wa.me/${this.settingGet.firstPhoneNumber}?text=Hello\n ${this.settingGet.describtion}`,
       '_blank'
     );
   }
@@ -50,6 +56,16 @@ export class WhatsappButtonComponent {
         this.textDir = 'rtl';
         console.log('from btn comp', this.textDir);
       }
+      this.settingService.getAllSetting().subscribe(
+        (data) => {
+          console.log('setting from footer');
+          this.settingGet = data;
+          console.log(this.settingGet);
+        },
+        (error) => {
+          console.error('Error fetching setting:', error);
+        }
+      );
     });
     setInterval(() => {
       this.rotateAndScaleState =

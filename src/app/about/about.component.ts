@@ -24,8 +24,8 @@ export class AboutComponent {
   ) {}
 
   ngOnInit() {
-    this.translatedashService.selectedLanguage$.subscribe((language) => {
-      this.language = language;
+    this.translatedashService.selectedLanguage$.subscribe((lan) => {
+      this.language = lan;
       if (this.language === 'en') {
         this.textDir = 'ltr';
         console.log(this.textDir);
@@ -35,16 +35,4 @@ export class AboutComponent {
       }
     });
   }
-  // ngOnInit() {
-  //   this.translatedashService.getLanguage().subscribe((language) => {
-  //     this.language = language;
-  //     if (this.language === 'en') {
-  //       this.textDir = 'ltr';
-  //       console.log(this.textDir);
-  //     } else {
-  //       this.textDir = 'rtl';
-  //       console.log(this.textDir);
-  //     }
-  //   });
-  // }
 }

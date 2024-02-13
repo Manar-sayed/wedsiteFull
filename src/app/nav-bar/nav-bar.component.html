@@ -44,7 +44,7 @@
           <nav class="main-nav clearfix d-flex w-100">
             <ul class="d-lg-flex w-100 justify-content-around">
               <li class="active parent">
-                <a href="home"
+                <a [routerLink]="['/home']" [queryParams]="{ lang: language }"
                   ><span>
                     {{ "navbar.home" | translation : language }}
                   </span></a
@@ -58,16 +58,15 @@
                 >
               </li> -->
               <li class="parent">
-                <a
-                  [routerLink]="['/about']"
-                  [queryParams]="{ lang: selectedLanguage }"
-                >
+                <a [routerLink]="['/about']" [queryParams]="{ lang: language }">
                   <span>{{ "navbar.about" | translation : language }}</span>
                 </a>
               </li>
 
               <li class="parent">
-                <a href="allServices"
+                <a
+                  [routerLink]="['/allServices']"
+                  [queryParams]="{ lang: language }"
                   ><span class="">
                     {{ "navbar.services" | translation : language
                     }}<i
@@ -78,9 +77,11 @@
                   <li
                     *ngFor="let cat of categories"
                     class="parent uldir"
-                    [class.rtl]="selectedLanguage === 'ar'"
+                    [class.rtl]="language === 'ar'"
                   >
-                    <a [routerLink]="['/services/', cat.id]"
+                    <a
+                      [routerLink]="['/services/', cat.id]"
+                      [queryParams]="{ lang: language }"
                       ><span> {{ cat.name }}</span></a
                     >
                   </li>
@@ -88,7 +89,9 @@
               </li>
 
               <li class="parent">
-                <a href="projects"
+                <a
+                  [routerLink]="['/projects']"
+                  [queryParams]="{ lang: language }"
                   ><span>
                     {{ "navbar.Products" | translation : language }}
 
@@ -104,7 +107,9 @@
                 </ul> -->
               </li>
               <li class="last">
-                <a href="contact"
+                <a
+                  [routerLink]="['/contact']"
+                  [queryParams]="{ lang: language }"
                   ><span>
                     {{ "navbar.contact" | translation : language }}
                   </span></a
@@ -120,7 +125,7 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {{ selectedLanguage === "ar" ? "Ar" : "En" }}
+                    {{ language === "ar" ? "Ar" : "En" }}
                   </button>
                   <div
                     class="dropdown-menu p-3 me-5 rounded"
@@ -145,7 +150,7 @@
               </li>
 
               <li class="my-3 my-md-5 mx-xl-1" *ngIf="!isLargeScreen">
-                <span *ngIf="selectedLanguage === 'ar'">
+                <span *ngIf="language === 'ar'">
                   <button
                     type="button"
                     (click)="switchLanguage('en')"
@@ -154,7 +159,7 @@
                     English
                   </button>
                 </span>
-                <span *ngIf="selectedLanguage === 'en'">
+                <span *ngIf="language === 'en'">
                   <button
                     type="button"
                     (click)="switchLanguage('ar')"

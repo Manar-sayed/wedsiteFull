@@ -161,8 +161,11 @@
           {{ "footer.visit" | translation : language }}
         </h4>
 
-        <p *ngFor="let line of settingGet.describtion.split('\n')" class="ms-5">
+        <!-- <p *ngFor="let line of settingGet.describtion.split('\n')" class="ms-5">
           {{ line }}
+        </p> -->
+        <p class="ms-5">
+          {{ settingGet.location }}
         </p>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-2">

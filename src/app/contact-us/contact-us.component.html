@@ -48,8 +48,9 @@
               <i class="icofont icofont-home"></i>
               {{ "contactUs.visit" | translation : language }}
             </h5>
-            <p *ngFor="let line of settingGet.describtion.split('\n')">{{ line }}</p>
-
+            <p *ngFor="let line of settingGet.describtion.split('\n')">
+              {{ line }}
+            </p>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">

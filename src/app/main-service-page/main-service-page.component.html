@@ -62,8 +62,9 @@
               <div class="wrapper-inner-tab-backgrounds-first">
                 <div class="sim-button button8">
                   <a [routerLink]="['/services/', item.id]"
-                    ><span
-                      >View More
+                    ><span>
+                      {{ "services_moreBtn" | translation : language }}
+
                       <i class="icofont icofont-rounded-right"></i></span
                   ></a>
                 </div>
