@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  Input,
   OnInit,
   Renderer2,
 } from '@angular/core';
@@ -17,7 +18,7 @@ import { ProductService } from '../_sharedService/_services/product.service';
   styleUrls: ['./services.component.css'],
 })
 export class ServicesComponent implements OnInit {
-  language: string = 'ar';
+  @Input() language: any;
   categoryId: any;
   products: Product[] = [];
 

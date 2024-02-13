@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SettingService } from '../_sharedService/setting.service';
 import { Setting } from '../_sharedService/setting';
@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
 
   settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
   // allGategory: any = [];
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   ngOnInit(): void {
     this.translatedashService.getLanguage().subscribe((language) => {

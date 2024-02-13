@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   Inject,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -60,7 +61,7 @@ export class ProjectdetailsComponent implements AfterViewInit {
       ],
     });
   }
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   productId: number = 0;
   currentProduct: Product = new Product(0, '', '', '', '', '', '', []);

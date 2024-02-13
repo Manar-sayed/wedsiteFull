@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslationService } from '../translation/translation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -23,7 +23,7 @@ import {
   ],
 })
 export class WhatsappButtonComponent {
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   rotateAndScaleState: 'normal' | 'rotated' = 'normal';
 

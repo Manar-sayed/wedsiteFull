@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslationService } from '../translation/translation.service';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -13,7 +13,7 @@ import { ProductService } from '../_sharedService/_services/product.service';
 export class ProjectsComponent {
   translatedDirAttribute: any = '';
   products: Product[] = [];
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   constructor(
     private translationService: TranslationService,

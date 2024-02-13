@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
 import { TranslationService } from '../translation/translation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -23,8 +23,8 @@ export class HomeComponent implements AfterViewInit {
   ].map((n) => `${n}`);
 
   translatedDirAttribute: any = '';
-  language: string = 'ar';
-  products: Product[] = [];
+  @Input() language: any;
+    products: Product[] = [];
   categorys: Category[] = [];
   textDir: any;
   constructor(

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Category } from '../_sharedService/_models/category';
 import { TranslationService } from '../translation/translation.service';
 import { CategoryService } from '../_sharedService/_services/category.service';
@@ -13,7 +13,7 @@ import { TranslatedashService } from '../translation/translatedash.service';
 export class MainServicePageComponent {
   translatedDirAttribute: any = '';
   categorys: Category[] = [];
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
   constructor(
     private translationService: TranslationService,

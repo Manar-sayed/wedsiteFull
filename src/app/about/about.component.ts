@@ -13,7 +13,6 @@ import { ProductService } from '../_sharedService/_services/product.service';
 export class AboutComponent {
   translatedDirAttribute: any = '';
   products: Product[] = [];
-  // language: string = 'ar';
   @Input() language: any;
   textDir: any;
   constructor(

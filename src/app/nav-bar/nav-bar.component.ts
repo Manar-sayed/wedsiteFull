@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownMenu } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,9 +19,9 @@ export class NavBarComponent {
 
   translatedDirAttribute: any;
   currentLanguage: any;
-  language: string = 'ar';
+  @Input() language: any;
   textDir: any;
-  selectedLanguage: string = 'ar';
+  selectedLanguage: string = 'en';
 
   constructor(
     private el: ElementRef,
