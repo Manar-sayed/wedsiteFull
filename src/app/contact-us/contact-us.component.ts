@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ContactmessageService } from '../_sharedService/contact_message/contactmessage.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslationService } from '../translation/translation.service';
 import { TranslatedashService } from '../translation/translatedash.service';
@@ -16,6 +16,8 @@ import { Setting } from '../_sharedService/setting';
 })
 export class ContactUsComponent implements OnInit {
   settingGet: Setting = new Setting(0, '', '', '', '', '', '', '');
+  iframeUrl: SafeResourceUrl = '';
+
   @Input() language: any;
   constructor(
     public messageService: ContactmessageService,
@@ -23,7 +25,8 @@ export class ContactUsComponent implements OnInit {
     public router: Router,
     private translatedashService: TranslatedashService,
     private translationService: TranslationService,
-    private settingService: SettingService
+    private settingService: SettingService,
+    private sanitizer: DomSanitizer
   ) {}
   contactusForm!: FormGroup;
   textDir: any;
@@ -32,7 +35,6 @@ export class ContactUsComponent implements OnInit {
   public editPro: any;
   allGategory: any = [];
   ngOnInit(): void {
-    console.log('first');
     this.translatedashService.selectedLanguage$.subscribe((lan) => {
       this.language = lan;
       if (this.language === 'en') {
@@ -49,6 +51,10 @@ export class ContactUsComponent implements OnInit {
           console.log('setting from footer');
           this.settingGet = data;
           console.log('this.settingGet', this.settingGet);
+          console.log(this.settingGet.map);
+          this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+            this.settingGet.map
+          );
         },
         (error) => {
           console.error('Error fetching setting:', error);
